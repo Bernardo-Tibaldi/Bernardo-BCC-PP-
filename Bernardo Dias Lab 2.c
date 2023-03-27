@@ -183,41 +183,210 @@ int main(void) {
   return 0;
 }
 
-// EXERCÍCIO 10*****************
-
+// EXERCÍCIO 10
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
+int main () {
   printf ("Apresente a altura e o sexo de uma pessoa, respectivamente:\n");
-  float Homens, Mulheres, h;
+  float h, Homens, Mulheres;
   char c, H, M;
   scanf ("%f", &h);
-  scanf ("%c", &c);
-  if (c == H) {
-  Homens: (72.7 * h) - 58.0;
-    printf ("O peso ideal dessa pessoa eh: %f \n", Homens);
+  scanf (" %c", &c);
+  if (c == 'H') {
+  Homens = 72.7 * h - 58.0;
+    printf ("O peso ideal dessa pessoa eh: %.2f \n", Homens);
   }
-  if (c == M) {
-    Mulheres: (62.1 * h) - 44.7;
-    printf ("O peso ideal dessa pessoa eh: %f \n", Mulheres);
+  if (c == 'M') {
+    Mulheres = 62.1 * h - 44.7;
+    printf ("O peso ideal dessa pessoa eh: %.2f \n", Mulheres);
   }
   return 0;
 }
 
 // EXERCÍCIO 11
 
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Apresente um numero maior que zero:\n");
+  int soma, n, a1, a2, a3, a4, a5;
+  //n = número; a1= algarismo 1; a2 = algarismo 2; a3 = algarismo 3; a4 - algarismo 4; a5 = algarismo 5.
+  scanf("%d", &n);
+  if (n < 0) {
+    printf ("Numero invalido\n");
+  }
+  else {
+    a1 = n/10000;
+    a2 = (n -a1*10000)/1000;
+    a3 = (n - a1*10000 - a2*1000)/100;
+    a4 = (n - a1*10000 - a2*1000 -a3*100)/10;
+    a5 = (n - a1*10000 - a2*1000 - a3*100 - a4*10)/1;
+    soma = a1 + a2 + a3 + a4 + a5;
+    printf ("A soma dos algarismos desse numero equivale a %d \n", soma);
+  }
+  return 0;
+}
+
 // EXERCÍCIO 12
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Apresente um numero maior que zero:\n");
+  float logaritmo, n;
+  scanf("%f", &n);
+  if (n < 0) {
+    printf ("Numero invalido\n");
+  }
+  else {
+    logaritmo = log10(n);
+    printf ("O logaritmo desse numero equivale a: %.3f \n", logaritmo);
+  }
+  return 0;
+}
 
 // EXERCÍCIO 13
 
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Apresente as notas das 3 provas feitas pelo estudante: \n");
+  float media, nota1, nota2, nota3;
+  scanf("%f", &nota1);
+  scanf("%f", &nota2);
+  scanf("%f", &nota3);
+  media = (nota1*1 +nota2*1 + nota3*2)/4; 
+  if (media > 60 || media == 60) {
+    printf ("Estudante aprovado\n");
+  }
+  else {
+  printf ("Estudante reprovado\n");
+  }
+  return 0;
+}
+
 // EXERCÍCIO 14
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Apresente as 3 notas do estudante: \n");
+  float Nota_Final, TL, AS, EF;
+  //TL = trab de laboratorio; AS = avaliação semestral; EF = exame final.
+  scanf("%f", &TL);
+  scanf("%f", &AS);
+  scanf("%f", &EF);
+  Nota_Final = (TL*2 + AS*3 + EF*5)/10;
+  if (TL < 0 || TL >10 || AS < 0 || AS >10 || EF < 0 || EF >10) {
+    printf ("Nota invalida\n");
+  }
+  else if (0 < Nota_Final && Nota_Final <2.9){
+        printf ("Estudante reprovado\n");
+  }
+  else if (3 < Nota_Final && Nota_Final < 4.9) {
+    printf ("Estudante de recuperacao\n");
+  }
+  else {
+    printf ("Estudante aprovado\n");
+  }
+
+  return 0;
+}
+
 
 // EXERCÍCIO 15
 
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Digite um numero: \n");
+  int dia;
+  scanf ("%d", &dia);
+  switch (dia) {
+    case 1:
+    printf ("Domingo\n"); break;
+    case 2:
+    printf ("Segunda\n"); break;
+    case 3:
+    printf ("Terça\n"); break;
+    case 4:
+    printf ("Quarta\n"); break;
+    case 5:
+    printf ("Quinta"); break;
+    case 6:
+    printf ("Sexta\n"); break;
+    case 7:
+    printf ("Sabado\n"); break;
+    default:
+    printf ("Nao eh um dia da semana\n");
+       
+  }
+  return 0;
+}
+
 // EXERCÍCIO 16
 
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Digite um numero: \n");
+  int mes;
+  scanf ("%d", &mes);
+  switch (mes) {
+    case 1:
+    printf ("Janeiro\n"); break;
+    case 2:
+    printf ("Fevereiro\n"); break;
+    case 3:
+    printf ("Março\n"); break;
+    case 4:
+    printf ("Abril\n"); break;
+    case 5:
+    printf ("Maio"); break;
+    case 6:
+    printf ("Junho\n"); break;
+    case 7:
+    printf ("Julho\n"); break;
+    case 8:
+    printf ("Agosto\n"); break;
+    case 9:
+    printf ("Setembro\n"); break;
+    case 10:
+    printf ("Outubro\n"); break;
+    case 11:
+    printf ("Novembro\n"); break;
+    case 12:
+    printf ("Dezembro\n"); break;
+    default:
+    printf ("Nao eh um mes do ano\n");
+       
+  }
+  return 0;
+}
+
 // EXERCÍCIO 17
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  printf ("Apresente os valores das bases maiores e menores de um trapezio, assim como sua altura: \n");
+  float basemaior, basemenor, altura, A;
+  //TL = trab de laboratorio; AS = avaliação semestral; EF = exame final.
+  scanf("%f", &basemaior);
+  scanf("%f", &basemenor);
+  scanf("%f", &altura);
+  A = altura * (basemaior + basemenor)/2;
+  printf ("A area desse trapezio equivale a: %.2f\n", A);
+  return 0;
+}
 
 // EXERCÍCIO 18
 
