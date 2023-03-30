@@ -485,25 +485,338 @@ int main() {
 
 // EXERCÍCIO 21
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Escolha a opcao:\n 1- Soma de 2 numeros.\n 2- Diferenca entre 2 numeros (maior pelo menor).\n 3- Produto entre 2 numeros.\n 4- divisao entre 2 numeros (o denominador nao pode ser zero).\n");
+  int opcao;
+  float a, b, resultado;
+  scanf ("%d", &opcao);
+  switch (opcao) {
+    case 1:
+    printf ("Digite 2 valores:\n");
+    scanf ("%f", &a);
+    scanf ("%f", &b);
+    resultado = a + b;
+    printf ("O resultado dessa soma eh: %.2f", resultado); break;
+    case 2:
+    printf ("Digite 2 valores:\n");
+    scanf ("%f", &a);
+    scanf ("%f", &b);
+    resultado = a - b;
+    printf ("O resultado dessa diferenca eh: %.2f", resultado); break;
+    case 3:
+    printf ("Digite 2 valores:\n");
+    scanf ("%f", &a);
+    scanf ("%f", &b);
+    resultado = a * b;
+    printf ("O resultado dessa multiplicacao eh: %.2f", resultado); break;
+    case 4:
+    printf ("Digite 2 valores:\n");
+    scanf ("%f", &a);
+    scanf ("%f", &b);
+    resultado = a/b;
+    printf ("O resultado dessa divisao eh: %.2f", resultado); break;
+    
+    default:
+    printf ("Erro, opcao invalida.");
+  }
+  
+  return 0;
+}
+
 // EXERCÍCIO 22
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Informe sua idade e o tempo de servico:\n");
+  int idade, tempo;
+ 
+  scanf ("%d", &idade);
+  scanf ("%d", &tempo);
+  if (idade >= 65 || tempo >= 30 || (idade >= 60 && tempo >= 25)) {
+    printf ("Voce ja pode se aposentar");
+  }
+  else {
+    printf ("Voce nao pode se aposentar ainda");
+  }
+  
+  return 0;
+}
 
 // EXERCÍCIO 23
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Informe o ano em questao:\n");
+  int ano;
+ 
+  scanf ("%d", &ano);
+  if (ano%400 == 0 || (ano%4 == 0 && ano%100 != 0)) {
+    printf ("Esse ano eh bissexto\n");
+  }
+  else {
+    printf ("Esse ano nao eh bissexto\n");
+  }
+  
+  return 0;
+}
+
 //EXERCÍCIO 24
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  int estado;
+  float valor, PrecoFinal;
+  printf("Apresente o valor e um dos estados destinos de um produto: \n 1- Minas Gerais;\n 2- Sao Paulo; \n 3- Rio de Janeiro;\n 4-Mato Grosso do Sul\n");
+  scanf ("%f", &valor);
+  scanf ("%d", &estado);
+  switch (estado) {
+    case 1:
+    PrecoFinal = valor * 0.07;
+    printf ("O preco final com imposto desse produto sera: %.2f reais \n", PrecoFinal); break;
+    case 2:
+    PrecoFinal = valor * 0.12;
+    printf ("O preco final com imposto desse produto sera: %.2f reais \n", PrecoFinal); break;
+    case 3:
+    PrecoFinal = valor * 0.15;
+    printf ("O preco final com imposto desse produto sera: %.2f reais \n", PrecoFinal); break;
+    case 4:
+    PrecoFinal = valor * 0.08;
+    printf ("O preco final com imposto desse produto sera: %.2f reais \n", PrecoFinal); break;
+    
+    default:
+    printf ("Nao eh um estado da lista\n");
+  }
+   
+  return 0;
+}
 
 //EXERCÍCIO 25
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Informe os valores de a, b e c:\n");
+  float a, b, c, delta, x1,x2;
+  scanf ("%f", &a);
+  scanf ("%f", &b);
+  scanf ("%f", &c);
+  delta = b*b - 4*a*c;
+  x1 = (-b + sqrt (delta))/ 2*a;
+  x2 = (-b - sqrt (delta))/ 2*a;
+  if (delta < 0) {
+    printf ("Nao existe raiz real\n");
+  }
+  else if (delta == 0) {
+    printf ("Raiz unica\n");
+  }
+  else if (delta > 0){
+    printf ("Suas raizes sao: %.2f e %.2f\n", x1, x2);
+  }
+  return 0;
+}
+
 //EXERCÍCIO 26
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Informe a distancia, em km, e a quantidade de litros de gasolina consumidos por um carro:\n");
+  float distancia, litros, consumo;
+  scanf ("%f", &distancia);
+  scanf ("%f", &litros);
+  consumo = distancia / litros;
+  if (consumo < 8) {
+    printf ("Venda o carro! \n");
+  }
+  else if ( consumo >= 8 && consumo <= 14) {
+    printf ("Economico! \n");
+  }
+  else if (consumo > 14) {
+    printf ("Super Economico! \n");
+  }
+  return 0;
+}
 
 //EXERCÍCIO 27
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Informe a idade de um nadador\n");
+  int idade;
+  scanf ("%d", &idade);
+  if (5 <= idade && idade <= 7) {
+    printf ("Infantil A \n");
+  }
+  else if ( idade >= 8 && idade <= 10) {
+    printf ("Infanil B \n");
+  }
+  else if (idade >= 11 && idade <= 13) {
+    printf ("Juvenil A \n");
+  }
+  else if (idade >= 14 && idade <= 17) {
+    printf ("Juvenil B \n");
+  }
+  else if (idade >= 18) {
+    printf ("Senior \n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 28
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Leia 3 numeros inteiros e execute uma media: \n");
+  printf ("Escolha uma das medias:\n A-Geometrica\n B-Ponderada \n C-Harmonica \n D-Aritmetica\n");
+  int x, y, z, media;
+  char opcao;
+  scanf (" %d\n", &x);
+  scanf (" %d\n", &y);
+  scanf (" %d\n", &z);
+  scanf (" %c", &opcao);
+  switch (opcao) {
+    case 'A':
+    media = cbrt (x*y*z);
+    printf ("A media geometrica desses valores eh: %d \n", media); break;
+    case 'B':
+    media = ((1*x)+(2*y)+(3*z))/3;
+    printf ("A media ponderada desses valores eh: %d \n", media); break;
+    case 'C':
+    media = 1/ (1/x+1/y+1/z);
+    printf ("A media harmonica desses valores eh: %d \n", media); break;
+    case 'D':
+    media = (x+y+z)/3;
+    printf ("A media aritmetica desses valores eh: %d \n", media); break;
+    default:
+    printf ("Nao eh uma opcao\n");
+  }
+  return 0;
+}
 
 //EXERCÍCIO 29
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  int a, b, resposta, soma, questao =0, acertos = 0;
+  printf("====Prova==== \n");
+  do {
+    srand(time(NULL));
+    a = (rand() % 100) + 1;
+    b = (rand() % 100) + 1;
+    printf ("Qual a soma de %d + %d\?\n", a, b);
+    soma = a + b;
+    resposta = soma;
+    scanf ("%d", &resposta);
+    printf ("\n");
+    if (resposta != soma) {
+      printf ("Resposta Errada! A resposta correta eh: %d\n", soma);
+    }
+    else if (resposta == soma)
+    {
+      printf ("Resposta Correta!\n");
+      acertos ++;
+    }
+    questao ++;
+  } while (questao < 5);
+  
+    printf ("Voce acertou %d questoes!\n", acertos);
+  
+  
+  return 0;
+}
+
 //EXERCÍCIO 30
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  int x, y, z;
+  printf("Apresente 3 numeros distintos: \n");
+  scanf("%d", &x);
+  scanf("%d", &y);
+  scanf("%d", &z);
+
+  if (x < y && x < z && y < z){
+    printf ("%d, %d, %d\n", x, y, z);
+  }
+  if (x < y && x < z && y > z){
+    printf ("%d, %d, %d\n", x, z, y);
+  }
+  if (x > y && x < z && y < z){
+    printf ("%d, %d, %d\n", y, x, z);
+  }
+  if (x < y && x > z && y > z){
+    printf ("%d, %d, %d\n", z, x, y);
+  }
+  if (x > y && x > z && y < z){
+    printf ("%d, %d, %d\n", y, z, x);
+  }
+  if (x > y && x > z && y > z){
+    printf ("%d, %d, %d\n", z, y, x);
+  }
+   
+  return 0;
+}
+
 //EXERCÍCIO 31
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Informe a altura e o peso:\n");
+  float altura, peso;
+  scanf ("%f", &altura);
+  scanf ("%f", &peso);
+  if (altura < 1.20 && peso <= 60) {
+    printf ("A\n");
+  }
+  if (altura < 1.20 && (peso > 60 && peso <= 90)) {
+    printf ("D\n");
+  }
+  if (altura < 1.20 && ( peso > 90)) {
+    printf ("G\n");
+  }
+  if ((altura > 1.2 && altura < 1.70) && (peso <= 60)) {
+    printf ("B\n");
+  }
+  if ((altura > 1.2 && altura < 1.70) && (peso > 60 && peso <= 90)) {
+    printf ("E\n");
+  }
+  if ((altura > 1.2 && altura < 1.70) && (peso > 90)) {
+    printf ("H\n");
+  }
+  if ((altura > 1.7) && (peso <= 60)) {
+    printf ("C\n");
+  }
+  
+  if (altura > 1.7 && (peso > 60 && peso <= 90)) {
+    printf ("F\n");
+  }
+  if (altura > 1.7 && (peso > 90)) {
+    printf ("I\n");
+  }
+          
+  return 0;
+}
 
 //EXERCÍCIO 32
 
@@ -513,11 +826,234 @@ int main() {
 
 //EXERCÍCIO 35
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+   int dia, mes;
+  printf("Insira uma data\n");
+  scanf ("%d/%d", &dia, &mes);
+  if (mes == 1){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 2){
+    if (dia <= 28){
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 3){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 4){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 5){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 6){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 7){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 8){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 9){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 10){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 11){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 12){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }  
+  }
+  if (mes <= 13) {
+    printf("Data Invalida\n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 36
 
 //EXERCÍCIO 37
 
 //EXERCÍCIO 38
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+   int dia, mes, ano;
+  printf("Insira a sua data de nascimento: \n");
+  scanf ("%d/%d/%d", &dia, &mes, &ano);
+    if (ano >= 2022) {
+    printf ("Ano invalido\n");
+  } 
+  else {
+   if (mes == 1){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 2){
+    if (dia <= 28){
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 3){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 4){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 5){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 6){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 7){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 8){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 9){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 10){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 11){
+    if (dia <= 30) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }
+  }
+  if (mes == 12){
+    if (dia <= 31) {
+      printf ("Data Valida\n");
+    }
+    else {
+      printf("Data Invalida\n");
+    }  
+  }
+  if (mes >= 13) {
+    printf("Data Invalida\n");
+  }
+  return 0;
+  }
+}
 
 //EXERCÍCIO 39
 
