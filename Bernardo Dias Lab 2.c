@@ -390,9 +390,98 @@ int main () {
 
 // EXERCÍCIO 18
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Escolha uma das opções a seguir: \n");
+  printf("A- Adicao \n B-Subtracao \n C-Multiplicacao \n D- Divisao \n");
+  char opcao;
+  float a, b, Resultado;
+  scanf("%c", &opcao);
+  switch (opcao)
+  {
+    case 'A':
+    printf ("Escolha dois numeros:\n");
+    scanf ("%f\n %f",&a, &b);
+    Resultado = a + b;
+    printf ("O resultado dessa adicao eh: %.2f", Resultado); break;
+    case 'B':
+    printf ("Escolha dois numeros:\n");
+    scanf ("%f\n %f",&a, &b);
+    Resultado = a - b;
+      printf ("O resultado dessa subtracao eh: %.2f", Resultado); break;
+    printf ("");
+    case 'C':
+    printf ("Escolha dois numeros:\n");
+    scanf ("%f\n %f",&a, &b);
+    Resultado = a * b;
+    printf ("O resultado dessa multiplicacao eh: %.2f", Resultado); break;
+    printf ("");
+    case 'D':
+    printf ("Escolha dois numeros:\n");
+    scanf ("%f\n %f",&a, &b);
+    Resultado = a/b;
+    printf ("O resultado dessa divisao eh: %.2f", Resultado); break;
+    default:
+    printf ("Nao eh uma das alternativas\n");
+    
+  }  
+  return 0;
+}
+
 // EXERCÍCIO 19
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Digite um valor: \n");
+  int n;
+  scanf("%d", &n);
+  if (n%3 == 0 && n%15 != 0) {
+    printf ("Esse numero eh divisivel por 3\n");
+  }
+  else if (n%5 == 0 && n%15 !=0) {
+    printf ("Esse numero eh divisivel por 5\n");
+  }
+  else if (n%15 == 0){
+    printf ("Esse numero eh divisivel por 5 e 3 ao mesmo tempo\n");
+  }
+  else {
+    printf ("Esse numero nao pode ser divisivel pelos dois\n");
+  }
+  return 0;
+}
+
 // EXERCÍCIO 20
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf("Digite 3 valores: \n");
+  float A, B, C;
+  scanf ("%f", &A);
+  scanf ("%f", &B);
+  scanf ("%f", &C);
+  if (A > 0 && B > 0 && C> 0 && A < B + C && B < C + A && C < A + B) {
+    if (A == B && A == C && B == C) {
+    printf ("Este eh um triangulo equilatero\n");
+    }
+    if ((A == B && A != C)|| (A == C && A != B) || (B == C && B != A)){
+    printf ("Este eh um triangulo isoceles\n");
+    }
+    if (A != B && A != C && B != C) {
+    printf ("Este eh um triangulo escaleno\n");
+    }
+    
+  }
+  if (A < 0 || B < 0 || C < 0 || A > B + C || B > A + C || C > B + A) {
+    printf ("Nao podem ser valores dos lados de um triangulo\n");
+  }
+  return 0;
+}
 
 // EXERCÍCIO 21
 
