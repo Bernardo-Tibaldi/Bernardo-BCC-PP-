@@ -820,9 +820,291 @@ int main() {
 
 //EXERCÍCIO 32
 
-//EXERCÍCIO 33
+#include <math.h>
+#include <stdio.h>
 
+int main() {
+  printf ("Leia o código do produto e a quantidade:\n");
+  int codigo, quantidade;
+  float valor;
+  scanf ("%d", &codigo);
+  scanf ("%d", &quantidade);
+  switch (codigo) {
+    case 100:
+      valor = quantidade * 1.20;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    case 101:
+      valor = quantidade * 1.30;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    case 102:
+      valor = quantidade * 1.50;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    case 103:
+      valor = quantidade * 1.20;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    case 104:
+      valor = quantidade * 1.70;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    case 105:
+      valor = quantidade * 2.20;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    case 106:
+      valor = quantidade * 1.00;
+    printf ("O valor desses produtos sera: %.2f\n", valor); break;
+    default:
+    printf ("Produto nao encontrado\n");
+    
+  }
+  return 0;
+}
+
+//EXERCÍCIO 33
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf ("Leia o código do produto e a quantidade:\n");
+  int codigo, quantidade;
+  float valor, valornovo;
+  scanf ("%d", &codigo);
+  scanf ("%d", &quantidade);
+  switch (codigo) {
+    case 100:
+      valor = quantidade * 1.20;
+      if (valor < 50) {
+        valornovo = quantidade * 1.20 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 1.20 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor > 100) {
+        valornovo = quantidade * 1.20 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+        if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    case 101:
+      valor = quantidade * 1.30;
+      if (valor < 50) {
+        valornovo = quantidade * 1.30 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 1.30 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+    if (valor > 100) {
+        valornovo = quantidade * 1.30 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+           if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    case 102:
+      valor = quantidade * 1.50;
+      if (valor < 50) {
+        valornovo = quantidade * 1.50 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 1.50 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+    if (valor > 100) {
+        valornovo = quantidade * 1.50 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+           if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    case 103:
+      valor = quantidade * 1.20;
+      if (valor < 50) {
+        valornovo = quantidade * 1.20 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 1.20 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor > 100) {
+        valornovo = quantidade * 1.20 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+           if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    case 104:
+      valor = quantidade * 1.70;
+      if (valor < 50) {
+        valornovo = quantidade * 1.70 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 1.70 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor > 100) {
+        valornovo = quantidade * 1.70 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+           if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    case 105:
+      valor = quantidade * 2.20;
+      if (valor < 50) {
+        valornovo = quantidade * 2.20 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 2.20 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor > 100) {
+        valornovo = quantidade * 2.20 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+           if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    case 106:
+      valor = quantidade * 1.00;
+      if (valor < 50) {
+        valornovo = quantidade * 1.00 * 1.05;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor >= 50 && valor <= 100) {
+        valornovo = quantidade * 1.00 * 1.10;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+      if (valor > 100) {
+        valornovo = quantidade * 1.00 * 1.15;
+        printf ("O valor desses produtos sera: %.2f\n", valornovo);
+      }
+           if (valornovo <= 80) {
+          printf ("Barato\n");
+          }
+        else if ((valornovo > 80) && (valornovo <= 120)) {
+          printf ("Normal\n");
+          }
+        else if ((valornovo > 120) && (valornovo <= 200)) {
+          printf ("Caro\n");
+          }
+        else if (valornovo > 200) {
+          printf ("Muito caro\n");
+          };break;
+    default:
+    printf ("Produto nao encontrado\n");
+    
+  }
+  
+  return 0;
+}
 //EXERCÍCIO 34
+
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  int faltas;
+  float nota;
+  printf ("Apresente a nota e o número de faltas de um aluno:\n");
+  scanf ("%f", &nota);
+  scanf ("%d", &faltas);
+  if (faltas <= 20) {
+    if ((nota >= 9) && (nota <= 10)) {
+     printf ("Conceito sera A\n"); 
+    }
+    if ((nota >= 7.5) && (nota <= 8.9)) {
+     printf ("Conceito sera B\n"); 
+    }
+    if ((nota >= 5) && (nota <= 7.4)) {
+     printf ("Conceito sera C\n"); 
+    }
+    if ((nota >= 4) && (nota <= 4.9)) {
+     printf ("Conceito sera D\n"); 
+    }
+    if ((nota >= 0) && (nota <= 3.9)) {
+     printf ("Conceito sera E\n"); 
+    }
+  }
+  else {
+    if ((nota >= 9) && (nota <= 10)) {
+     printf ("Conceito sera B\n"); 
+    }
+    if ((nota >= 7.5) && (nota <= 8.9)) {
+     printf ("Conceito sera E\n"); 
+    }
+    if ((nota >= 5) && (nota <= 7.4)) {
+     printf ("Conceito sera D\n"); 
+    }
+    if ((nota >= 4) && (nota <= 4.9)) {
+     printf ("Conceito sera E\n"); 
+    }
+    if ((nota >= 0) && (nota <= 3.9)) {
+     printf ("Conceito sera E\n"); 
+    }
+  }
+  return 0;
+}
 
 //EXERCÍCIO 35
 
@@ -937,7 +1219,108 @@ int main() {
 
 //EXERCÍCIO 36
 
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  printf ("Apresente o valor da venda:\n");
+  float valor, comissao;
+  scanf ("%f", &valor);
+  if (valor >=100000) {
+    comissao = 700.00 + 1.16*valor;
+    printf ("O valor da comissao sera igual a: %.2f\n", comissao);
+  }
+  if (valor < 100000 && valor >= 80000) {
+    comissao = 650.00 + 1.14*valor;
+    printf ("O valor da comissao sera igual a: %.2f\n", comissao);
+  }
+  if (valor < 80000 && valor >= 60000) {
+    comissao = 600.00 + 1.14*valor;
+    printf ("O valor da comissao sera igual a: %.2f\n", comissao);
+  }
+  if (valor < 60000 && valor >= 40000) {
+    comissao = 550.00 + 1.14*valor;
+    printf ("O valor da comissao sera igual a: %.2f\n", comissao);
+  }
+  if (valor < 40000 && valor >= 20000) {
+    comissao = 500.00 + 1.14*valor;
+    printf ("O valor da comissao sera igual a: %.2f\n", comissao);
+  }
+  if (valor < 20000) {
+    comissao = 450.00 + 1.14*valor;
+    printf ("O valor da comissao sera igual a: %.2f\n", comissao);
+  }
+  return 0;
+}
+
 //EXERCÍCIO 37
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+  int HoraEntrada, MinutoEntrada, HoraSaida, MinutoSaida, saida, entrada, tempo;
+  float preco;
+  printf ("Informe o horario de chegada e de partida do estacionamento, respectivamente: \n");
+  scanf ("%d %d", &HoraEntrada, &MinutoEntrada);
+  scanf ("%d %d", &HoraSaida, &MinutoSaida);
+  if (HoraEntrada <= HoraSaida) {
+    saida = HoraSaida * 60 + MinutoSaida;
+    entrada = HoraEntrada * 60 + MinutoEntrada;
+    tempo = saida - entrada;
+    if (tempo > 0 && tempo <= 60) {
+      preco = 1.00;
+      printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+    else if (tempo > 60 && tempo <= 120) {
+      preco = 2.00;
+      printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+     else if (tempo > 120 && tempo <= 180) {
+      preco = 3.40;
+       printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+     else if (tempo > 180 && tempo <= 240) {
+      preco = 4.80;
+       printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+    else if (tempo > 240) {
+      do {
+        preco = preco + 1;
+        tempo = tempo + 60;
+      } while (tempo< 1440);
+      printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+  } 
+if (HoraEntrada > HoraSaida) {
+    saida = (HoraSaida + 24) * 60 + MinutoSaida;
+    entrada = HoraEntrada * 60 + MinutoEntrada;
+    tempo = saida - entrada;
+    if (tempo > 0 && tempo <= 60) {
+      preco = 1.00;
+      printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+    else if (tempo > 60 && tempo <= 120) {
+      preco = 2.00;
+      printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+     else if (tempo > 120 && tempo <= 180) {
+      preco = 3.40;
+       printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+     else if (tempo > 180 && tempo <= 240) {
+      preco = 4.80;
+       printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+    else if (tempo > 240) {
+      do {
+        preco = preco + 1;
+        tempo = tempo + 60;
+      } while (tempo< 1440);
+      printf ("O preco a se pagar sera de %.2f reais\n", preco);
+    }
+  }
+  return 0;
+}
 
 //EXERCÍCIO 38
 
@@ -1057,4 +1440,92 @@ int main() {
 
 //EXERCÍCIO 39
 
+#include <stdio.h>
+
+int main() 
+{
+    int ano;
+    float salario1, salario2;
+    
+    printf ("Digite o salario atual\n");
+    scanf ("%f", &salario1);
+
+    printf ("\n");
+    
+    printf ("Digite o tempo de servico em anos");
+    scanf ("%i", &ano);
+
+    printf ("\n");
+
+    if ( salario1 <= 500 && ano < 1)
+    {
+        salario2 = salario1*1.25;
+        printf ("Novo salario: %.2f", salario2);
+        return 0;
+    }
+    if ( salario1 <= 1000 && ano >= 1 && ano <=3 )
+    {
+        salario2 = 100 + (salario1*1.20);
+        printf ("Novo salario: %.2f", salario2);
+        return 0;
+    }
+    if ( salario1 <= 1500 && ano >= 4 && ano <=6 )
+    {
+        salario2 = 200 + (salario1*1.15);
+        printf ("Novo salario: %.2f", salario2);
+        return 0;
+    }
+    if ( salario1 <= 2000 && ano >= 7 && ano <=10 )
+    {
+        salario2 = 300 + (salario1*1.10);
+        printf ("Novo salario: %.2f", salario2);
+        return 0;
+    }
+    if ( salario1 > 2000 && ano > 10 )
+    {
+        salario2 = 500 + salario1;
+        printf ("Novo salario: %.2f", salario2);
+        return 0;
+    }
+    else {
+    printf ("Sem direito a aumento");
+    }
+  
+  return 0;
+}
+
+
 //EXERCÍCIO 40
+
+#include <stdio.h>
+
+int main() 
+{
+    float custof, distribuidor, impostos, custoc;
+    printf ("DIigite o custo de fabrica\n");
+    scanf ("%f", &custof);
+    
+    printf ("\n");
+
+    if (custof < 12000)
+    {
+        distribuidor = custof*0.05;
+        custoc = distribuidor+custof;
+        printf ("O custo ao consumidor r: %.2f", custoc);
+    }
+    if (custof >= 12000 && custof < 25000)
+    {
+        distribuidor = custof*0.10;
+        impostos = custof*0.15;
+        custoc = impostos+distribuidor+custof;
+        printf ("O custo ao consumidor r: %.2f", custoc);
+    }
+    if (custof > 25000)
+    {
+        distribuidor = custof*0.15;
+        impostos = custof*0.20;
+        custoc = distribuidor+custof;
+        printf ("O custo ao consumidor r: %.2f", custoc);
+    }
+  return 0;
+}
