@@ -132,15 +132,95 @@ int main() {
 
 //Exercício 8
 
+#include <stdio.h>
+#include <math.h>
 
+int main () {
+  int y, maior, menor, numero;
+  printf ("Digite 10 valores quaisquer:\n");
+  scanf ("%d", &numero);
+  maior = numero;
+  menor = numero;
+  for (y=1; y<10; y++) {
+    scanf ("%d", &numero);
+    if (numero>maior) {
+      maior = numero;
+    }
+    else if (numero<menor) {
+      menor = numero;
+    }
+  }
+  printf ("O maior numero dentre esses eh %d\n", maior);
+  printf ("O menor numero dentre esses eh %d\n", menor);
+  return 0;
+}
 
 //Exercício 9
 
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  int y, n;
+  printf ("Digite um valor n qualquer:\n");
+  scanf ("%d", &n);
+  printf ("Os numeros impares ate %d sao:\n", n);
+  for (y=0; y<=n; y++) {
+    if (y%2 != 0) {
+      printf ("%d ", y);
+    }
+  }
+  return 0;
+}
+
 //Exercício 10
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  int y, soma = 0;
+  for (y=1; y<=50; y++) {
+    printf ("%d ", y);
+    soma = soma+y;
+  }
+  printf ("\n");
+  printf ("a soma desses valores: %d", soma);
+  return 0;
+}
 
 //Exercício 11
 
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  int y, n = 0;
+  printf ("Digite um valor n qualquer:\n");
+  scanf ("%d", &n);
+  for (y=0; y<=n; y++) {
+    printf ("%d ", y);
+  }
+  return 0;
+}
+
 //Exercício 12
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  int y, n = 0, soma = 0;
+  printf ("Digite um valor n qualquer:\n");
+  scanf ("%d", &n);
+  for (y=1; y<=n; y++) {
+    if (n%y == 0) {
+      soma = soma + y;
+    }
+  }
+  printf ("A soma de seus divisores eh %d", soma);
+  return 0;
+}
 
 //Exercício 13
 
