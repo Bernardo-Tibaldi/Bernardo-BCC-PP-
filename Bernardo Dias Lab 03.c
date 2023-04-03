@@ -181,8 +181,9 @@ int main () {
 int main () {
   int y, soma = 0;
   for (y=1; y<=50; y++) {
-    printf ("%d ", y);
+    if (y%2 == 0) {
     soma = soma+y;
+    }
   }
   printf ("\n");
   printf ("a soma desses valores: %d", soma);
@@ -223,6 +224,21 @@ int main () {
 }
 
 //Exercício 13
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  int y, soma = 0;
+  for (y=1; y<=1000; y++) {
+    if ((y%5 == 0) && (y%3 == 0)) {
+    soma = soma+y;
+    }
+  }
+  printf ("\n");
+  printf ("a soma desses valores: %d", soma);
+  return 0;
+}
 
 //Exercício 14
 
