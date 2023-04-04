@@ -242,6 +242,34 @@ int main () {
 
 //Exercício 14
 
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main () {
+  srand (time(NULL));
+  int n, y, d1, d2;
+  printf ("Informe o numero de vezes que dois dados sejam arremessados:\n");
+  scanf ("%d", &n);
+  for (y = 1; y<= n; y++) {
+    d1 = rand () % 6;
+    d2 = rand () % 6;
+    if (d1 <= 6 && d2 <= 6) {
+        if (d1>d2) {
+      printf ("%d eh maior que %d\n", d1, d2);
+    }
+      else if (d1 < d2) {
+        printf ("%d eh menor que %d\n", d1, d2);
+      }
+      else if (d1 == d2) {
+        printf ("%d eh igual a %d\n", d1, d2);
+      }
+    }
+  }
+    
+  return 0;
+}
+
 //Exercício 15
 
 //Exercício 16
