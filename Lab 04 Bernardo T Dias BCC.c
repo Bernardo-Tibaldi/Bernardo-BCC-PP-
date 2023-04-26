@@ -92,11 +92,79 @@ int main () {
 
 //EXERCÍCIO 4
 
+#include <stdio.h>
+#include <math.h>
+float Verifica (float a) {
+  float b;
+  b = sqrt (a);
+  if (pow((b), 2) == a) {
+    printf ("Eh um quadrado perfeito\n");
+  }
+  else {
+    printf ("Nao eh um quadrado perfeito\n");
+  }
+}
+
+int main () {
+  printf ("Digite um numero:\n");
+  float a;
+  scanf ("%f", &a);
+  Verifica (a);
+  return 0;
+}
+
 //EXERCÍCIO 5
+
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14
+float raio, esfera;
+float Volume (float raio) {
+  esfera = (4 * PI * (pow (raio, 3)))/3;
+  printf ("O Volume de uma esfera com esse raio eh: %.2f\n", esfera);
+}
+
+int main () {
+  printf ("Apresente um raio:\n");
+  scanf ("%f", &raio);
+  Volume (raio);
+  return 0;
+}
 
 //EXERCÍCIO 6
 
+#include <stdio.h>
+int horas, minutos, segundos, Tempo;
+
+int Conversao (int horas, int minutos, int segundos) {
+  Tempo = (horas*3600) + (minutos*60) + segundos;
+  printf ("Esse tempo equivale a %d segundos\n", Tempo);
+}
+
+int main () {
+  printf ("Apresente as horas, minutos e segundos:\n");
+  scanf ("%d : %d : %d", &horas, &minutos, &segundos);
+  Conversao (horas, minutos, segundos);
+  return 0;
+}
+
+
 //EXERCÍCIO 7
+
+#include <stdio.h>
+float Celsius, Conversao;
+float Fahrenheit (float Celsius) {
+  return ((Celsius*9)/5) + 32;  
+}
+
+int main () {
+  printf ("Apresente uma temperatura em Celsius:\n");
+  scanf ("%f", &Celsius);
+  Conversao = Fahrenheit (Celsius);
+  printf ("Esse valor em Fahrenheit eh: %.2f", Conversao);
+  return 0;
+}
+
 
 //EXERCÍCIO 8
 
