@@ -168,13 +168,135 @@ int main () {
 
 //EXERCÍCIO 8
 
+#include <stdio.h>
+#include <math.h>
+float a, b, resultado;
+float hipotenusa (float a, float b) {
+  return sqrt(pow(a, 2) + pow(b, 2));
+}
+
+int main () {
+  printf ("Apresente dois catetos de um triangulo:\n");
+  scanf ("%f", &a);
+  scanf ("%f", &b);
+  resultado = hipotenusa(a, b);
+  printf ("A hipotenusa desse triangulo eh: %.2f\n", resultado);
+  return 0;
+}
+
+
 //EXERCÍCIO 9
+
+#include <stdio.h>
+#include <math.h>
+#define PI 3.141592
+float altura, raio, cilindro;
+
+float volume (float raio, float altura) {
+  return PI * altura * (pow(raio, 2));
+}
+
+int main () {
+  printf ("Apresente o raio e a altura de um cilindro, respectivamente:\n");
+  scanf ("%f", &raio);
+  scanf ("%f", &altura);
+  cilindro = volume (raio, altura);
+  printf ("O volume desse cilindro eh: %.3f \n", cilindro);
+  return 0;
+}
 
 //EXERCÍCIO 10
 
+#include <stdio.h>
+int a, b, resultado;
+int comparacao (int a, int b) {
+  if (a > b) {
+    return a;
+  }
+  else if (a < b) {
+    return b;
+  }
+  else {
+    printf ("Os dois valores são iguais\n");
+    return 0;
+  }
+}
+int main () {
+  printf ("Indique dois valores:\n");
+  scanf ("%d", &a);
+  scanf ("%d", &b);
+  resultado = comparacao (a, b);
+  if (a - b != 0) {
+  printf ("%d eh maior\n", resultado);
+  }
+  else if (a - b == 0) {
+    printf ("\n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 11
 
+#include <stdio.h>
+float n1, n2, n3, resultado;
+char media, A, P;
+float calculo (float media) {
+  if (media == 'A') {
+    return (n1+n2+n3)/3;
+  }
+  else if (media == 'P') {
+    return ((n1*5) + (n2*3) + (n3*2))/ (n1+n2+n3); 
+  }
+  else {
+    printf ("Erro!\n");
+  }
+} 
+
+int main () {
+  printf ("Apresente qual media sera aplicada:\n");
+  scanf ("%c", &media);
+  if (media == 'A') {
+    printf ("Indique as notas:\n");
+    scanf ("%f %f %f", &n1, &n2, &n3);
+    resultado = calculo ('A');
+    printf ("A media aritmetica dessas notas eh: %.2f\n", resultado);
+  }
+  else if (media == 'P') {
+    printf ("Indique as notas:\n");
+    scanf ("%f %f %f", &n1, &n2, &n3);
+    resultado = calculo ('P');
+    printf ("A media ponderada dessas notas eh: %.2f\n", resultado);
+  }
+  return 0;
+}
+
 //EXERCÍCIO 12
+
+#include <stdio.h>
+int numero, soma, a, b, c, d, n1, n2, n3;
+
+int calculo (int numero) {
+  a = numero/1000;
+  n1 = numero%1000;
+  b = n1/100;
+  n2 = n1%100;
+  c = n2/10;
+  d = n2%10;
+  return a + b + c + d;
+}
+
+int main () {
+  printf ("Apresente um numero de 4 algarismos:\n");
+  scanf ("%d", &numero);
+  if (numero > 0) {
+    soma = calculo (numero);
+    printf ("A soma dos algarismos desse numero eh %d\n", soma);
+  }
+  else {
+    printf ("Numero Invalido\n");
+  }
+  return 0;
+}
 
 //EXERCÍCIO 13
 
