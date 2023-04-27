@@ -501,9 +501,37 @@ int main () {
   return 0;
 }
 
-//EXERCÍCIO 20***********************************
+//EXERCÍCIO 20
 
+#include <stdio.h>
+#include <math.h>
 
+int numero, contador = 1, i, j, Contador_primo; //Contador já considera o 2.
+
+int primo (int numero) {
+  for (i = 3; i < numero; i += 2) {
+    Contador_primo = 1;
+    for (j = 3; j <= sqrt(numero); j +=2) {
+      if (i % j == 0) {
+        Contador_primo = 0;
+        break;
+      }
+    }
+      if (Contador_primo == 1)
+      {
+        contador = contador + 1;
+      }
+  }
+  return contador;
+}
+
+int main () {
+  printf ("Indique um numero:\n");
+  scanf ("%d", &numero);
+  primo (numero);
+  printf ("O numero de primos entre 0 e %d eh %d", numero, contador);
+  return 0;
+}
 
 //EXERCÍCIO 21
 
@@ -555,6 +583,25 @@ int main () {
   return 0;
 }
 
-//EXERCÍCIO 24***********************
+//EXERCÍCIO 24
 
+#include <stdio.h>
+int n, i, j, k;
+int piramide(int n) {
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n - i; j++) {
+      printf(" ");
+    }
+    for (k = 1; k <= (2 * i - 1); k++) {
+      printf("!");
+    }
+    printf("\n");
+  }
+}
 
+int main() {
+  printf("Digite um numero:\n");
+  scanf("%d", &n);
+  piramide(n);
+  return 0;
+}
