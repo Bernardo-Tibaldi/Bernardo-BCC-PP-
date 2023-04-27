@@ -300,19 +300,210 @@ int main () {
 
 //EXERCÍCIO 13
 
+#include <stdio.h>
+int n1, n2, resultado;
+char simbolo;
+
+int operacao (char simbolo) {
+  if (simbolo == '+') {
+    return n1+n2;
+  }
+  else if (simbolo == '-') {
+    return n1-n2;
+  }
+  else if (simbolo == '*') {
+    return n1*n2;
+  }
+  else if (simbolo == '/') {
+    return n1/n2;
+  }
+  else {
+    printf ("Erro!\n");
+    return 0;
+  }
+}
+
+int main() {
+  printf("Escolha uma operacao matematica:\n");
+  printf (" adicao: +\n subtracao: -\n multiplicacao: *\n divisao: /\n");
+  scanf ("%c", &simbolo);
+  if (simbolo == '+') {
+    printf ("Apresente dois valores para a adicao:\n");
+    scanf("%d %d", &n1, &n2);
+    resultado = operacao ('+');
+    printf ("%d + %d = %d", n1, n2, resultado);
+  }
+  else if (simbolo == '-'){
+    printf ("Apresente dois valores para a subtracao:\n");
+    scanf("%d  %d", &n1, &n2);
+    resultado = operacao ('-');
+    printf ("%d - %d = %d", n1, n2, resultado);
+  }
+  else if (simbolo == '*') {
+    printf ("Apresente dois valores para a multiplicacao:\n");
+    scanf("%d %d", &n1, &n2);
+    resultado = operacao ('*');
+    printf ("%d * %d = %d", n1, n2, resultado);
+  }
+  else if (simbolo == '/') {
+    printf ("Apresente dois valores para a divisao:\n");
+    scanf("%d %d", &n1, &n2);
+    resultado = operacao('/');
+    printf ("%d / %d = %d", n1, n2, resultado);
+  }
+  else {
+    printf ("Erro!\n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 14
+
+#include <stdio.h>
+
+float consumo, Km, litros;
+
+float calculo (float Km, float litros) {
+  consumo = Km/litros;
+  if (consumo < 8) {
+    printf ("Venda o carro!\n");
+    return 0;
+  }
+  else if (consumo >= 8 && consumo <= 14) {
+    printf ("Econômico!\n");
+    return 0;
+  }
+  else if (consumo > 14) {
+    printf ("Super econômico!\n");
+    return 0;
+  }
+}
+
+int main () {
+  printf ("Indique a distancia e a quantidade de litros gasta por um carro em um determinado percurso para que o carro seja avaliado com base no seu consumo:\n");
+  scanf ("%f", &Km);
+  scanf ("%f", &litros);
+  calculo (Km, litros);
+  return 0;
+}
 
 //EXERCÍCIO 15
 
+#include <stdio.h>
+
+float a, b, c;
+
+float triangulo (float a, float b, float c) {
+  if (a == b && b == c) {
+    printf ("Triangulo Equilatero\n");
+  }
+  else if ((a == b && a != c && b != c) || (a == c && a != b && c != b) || (b == c &&  b != a && c != a)) {
+   printf ("Triangulo Isoceles\n"); 
+  }
+  else if (a != b && b != c && a != c) {
+    printf ("Triangulo Escaleno\n");
+  }
+  return 0;
+}
+
+float verifica (float a, float b, float c) {
+  if (a < (b+c) && b < (a+c) && c < (b+a)) {
+    triangulo (a, b, c);
+  }
+  else {
+    printf ("Nao eh um triangulo\n");
+    return 0;
+  }
+}
+
+int main () {
+  printf ("Determine 3 lados de um triangulo:\n");
+  scanf ("%f %f %f", &a, &b, &c);
+  verifica (a, b, c);
+  return 0;
+}
+
 //EXERCÍCIO 16
+
+#include <stdio.h>
+int a, i;
+int desenha_linha (int a) {
+  for (i = 0; i <= a; i++) {
+    printf("=");
+  }
+  return 0;
+}
+
+int main () {
+  printf ("Informe uma quantidade:\n");
+  scanf ("%d", &a);
+  desenha_linha (a);
+  return 0;
+}
 
 //EXERCÍCIO 17
 
+#include <stdio.h>
+int a, b, soma = 0, c;
+int calculo (int a, int b) {
+  c = a+1;
+  do {
+    soma = soma+c;
+    c++;
+  } while (c < b);
+  printf ("A soma dos valores entre esses numeros eh: %d\n", soma);
+  return 0;
+}
+
+int main () {
+  printf ("Informe dois numeros:\n");
+  scanf ("%d %d", &a, &b);
+  calculo (a, b);
+  return 0;
+}
+
 //EXERCÍCIO 18
+
+#include <stdio.h>
+int x, z, i, resultado = 1;
+int potencia (int x, int z) {
+  for (i = 0; i<z;i++) {
+    resultado = resultado *x;
+  }
+  printf("%d\n", resultado);
+  return 0;
+}
+
+int main () {
+  printf ("Apresente dois valores para uma funcao exponencial:\n");
+  scanf ("%d %d", &x, &z);
+  potencia (x, z);
+  return 0;
+}
 
 //EXERCÍCIO 19
 
+#include <stdio.h>
+int x, i, resultado = 1;
+
+int fatorial (int x) {
+  for (i = 1; i <= x; i++) {
+    resultado = resultado * i;
+  }
+  printf ("%d\n", resultado);
+  return 0;
+}
+
+int main () {
+  printf ("Digite um numero para o seu fatorial\n");
+  scanf ("%d", &x);
+  fatorial (x);
+  return 0;
+}
+
 //EXERCÍCIO 20
+
+
 
 //EXERCÍCIO 21
 
