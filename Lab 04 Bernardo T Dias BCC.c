@@ -501,12 +501,60 @@ int main () {
   return 0;
 }
 
-//EXERCÍCIO 20
+//EXERCÍCIO 20***********************************
 
 
 
 //EXERCÍCIO 21
 
+#include <stdio.h>
+int x, i, j;
+
+int fatorial (int x) {
+  for (i = 0; i < x; i++) {
+      for (j = 0; j < i; j++) {
+      printf("!");
+      }
+  printf("\n");
+    }
+  return 0;
+}
+
+int main () {
+  printf ("Digite um numero:\n");
+  scanf ("%d", &x);
+  fatorial (x);
+  return 0;
+}
+
 //EXERCÍCIO 23
 
-//EXERCÍCIO 24
+#include <stdio.h>
+int n, i, j;
+
+int fatorial (int n) {
+  for (i = 0; i < n; i++) {
+      for (j = 0; j < i; j++) {
+      printf("*");
+      }
+  printf("\n");
+    }
+  for (i = n; i > 0; i--) {
+      for (j = 0; j < i; j++) {
+      printf("*");
+      }
+  printf("\n");
+  }
+  return 0;
+}
+
+int main () {
+  printf ("Digite um numero:\n");
+  scanf ("%d", &n);
+  fatorial (n);
+  return 0;
+}
+
+//EXERCÍCIO 24***********************
+
+
