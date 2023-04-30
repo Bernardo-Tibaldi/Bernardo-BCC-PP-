@@ -92,11 +92,96 @@ int main () {
 
 //EXERCÍCIO 5
 
+#include <stdio.h>
+
+int main() {
+  int V[50], i;
+  for (i = 0; i < 50; i++) {
+    V[i] = (i+5*i)%(i+1);
+    printf("%d\n", V[i]);
+  }
+  return 0;
+}
+
 //EXERCÍCIO 6
+
+#include <stdio.h>
+
+int main() {
+  int V [10], i, primo = 0, j;
+  printf("Informe os valores nos vetores:\n");
+  for (i = 0; i < 10; i++) {
+    scanf ("%d", &V[i]);
+  }
+  for (j = 0; j < 10; j++) {
+        if ((V [j] == 1) || (V [j] == 0)) {
+            primo = primo + 0;
+        }
+        else if ((V [j] == 2) || (V [j] == 3) || (V [j] == 5) || (V [j] == 7)) {
+            printf ("O numero %d na posicao %d eh primo\n", V[j], j);
+        }
+        else if ((V [j] % 2 == 0) || (V [j] % 3 == 0) || (V [j] % 5 == 0) || (V [j] % 7 == 0)) {
+            primo = primo + 0;
+        }
+        else if ((V [j] % 2 != 0) || (V [j] % 3 != 0) || (V [j] % 5 != 0) || (V [j] % 7 != 0)) {
+           printf ("O numero %d na posicao %d eh primo\n", V[j], j); 
+    }
+  }
+  
+  return 0;
+}
 
 //EXERCÍCIO 7
 
+#include <stdio.h>
+
+int main () {
+  int V [6], i, j, k, soma = 0, impares = 0;
+  printf ("Informe os valores para um vetor:\n");
+  for (i = 0; i < 6; i++) {
+    scanf ("%d", &V[i]);
+  }
+  printf("Numeros pares:\n");
+  for (j = 0; j < 6; j++) {
+    if (V[j] % 2 == 0) {
+      printf ("%d ", V[j]);
+      soma = soma + V[j];
+    }
+    }
+  printf ("\n");
+  printf ("A soma dos pares eh %d\n", soma);
+  printf ("Numeros impares:\n");
+  for (k = 0; k < 6; k++) {
+    if (V[k] % 2 != 0) {
+      printf ("%d ", V[k]);
+      impares = impares + 1;
+    }
+  }
+  printf("\n");
+  printf("A quantidade de numeros impares eh: %d\n", impares);
+  return 0;
+}
+
 //EXERCÍCIO 8
+
+#include <stdio.h>
+
+int main () {
+  int V[10], i, j;
+  printf ("Indique valores para um vetor:\n");
+  for (i = 0; i < 10; i++) {
+    scanf ("%d", &V[i]);
+    if (V[i] == V[i-1] || V[i] == V [i-2] || V[i] == V[i-3] || V[i] == V [i-4] || V[i] == V[i-4] || V[i] == V [i-5] || V[i] == V[i-6] || V[i] == V [i-7] || V[i] == V[i-8] || V[i] == V [i-9]) {
+      printf ("Valor repetido! Digite outro valor:\n");
+      scanf ("%d", &V[i]);
+    }
+  }
+  printf ("Os valores do vetor sao:\n");
+  for (j = 0; j < 10; j++) {
+    printf ("%d ", V[j]);
+  }
+  return 0;
+}
 
 //MATRIZES
 
