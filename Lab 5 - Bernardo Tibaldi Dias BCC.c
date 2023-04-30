@@ -171,7 +171,7 @@ int main () {
   printf ("Indique valores para um vetor:\n");
   for (i = 0; i < 10; i++) {
     scanf ("%d", &V[i]);
-    if (V[i] == V[i-1] || V[i] == V [i-2] || V[i] == V[i-3] || V[i] == V [i-4] || V[i] == V[i-4] || V[i] == V [i-5] || V[i] == V[i-6] || V[i] == V [i-7] || V[i] == V[i-8] || V[i] == V [i-9]) {
+    if (V[i] == V[i-1] || V[i] == V [i-2] || V[i] == V[i-3] || V[i] == V [i-4] || V[i] == V [i-5] || V[i] == V[i-6] || V[i] == V [i-7] || V[i] == V[i-8] || V[i] == V [i-9]) {
       printf ("Valor repetido! Digite outro valor:\n");
       scanf ("%d", &V[i]);
     }
