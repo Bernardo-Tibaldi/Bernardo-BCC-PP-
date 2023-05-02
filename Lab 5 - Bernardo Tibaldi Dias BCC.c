@@ -187,13 +187,133 @@ int main () {
 
 //EXERCÍCIO 1
 
+#include <stdio.h>
+
+int main () {
+  int matriz [3] [3];
+  int i, j, contador = 0;
+  printf ("Indique os valores de uma matriz:\n");
+  for (i = 0; i < 3; i++) {
+    for (j = 0; j < 3; j++) {
+      scanf ("%d", &matriz [i] [j]);
+      if (matriz [i] [j] > 10) {
+        contador++;
+      }
+    }
+  }
+  printf ("Ha %d numeros maiores que 10 nesta matriz\n", contador);
+  return 0;
+}
+
 //EXERCÍCIO 2
+
+#include <stdio.h>
+
+int main () {
+  int matriz [5] [5];
+  int i, j;
+  for (i = 0; i < 5; i++) {
+    for (j = 0; j < 5; j++) {
+      if (i == j) {
+        printf(" [1] ");
+      }
+      else if (i != j) {
+        printf (" [0] ");
+      }
+    }
+    printf("\n");
+  }
+  return 0;
+}
 
 //EXERCÍCIO 3
 
+#include <stdio.h>
+
+int main () {
+  int matriz [4] [4], i, j, maior, maiorX, maiorY;
+  printf("Indique os valores para uma matriz:\n");
+  for (i = 0; i < 4; i++) {
+    for (j = 0; j < 4; j++) {
+      scanf ("%d", &matriz [i] [j]);
+      maior = matriz [0] [0];
+      if (matriz [i] [j] > maior) {
+        maior = matriz [i] [j];
+        maiorX = i;
+        maiorY = j;
+      }
+    }
+  }
+  printf ("O maior valor encontra-se na linha %d e na coluna %d\n", maiorX, maiorY);
+  return 0;
+}
+
 //EXERCÍCIO 4
 
+#include <stdio.h>
+
+int main () {
+  int matriz [5] [5], i, j, X, k, l, contador = 0;
+  /*
+  ======================================================
+  OBS: Usei duas variáveis a mais pois considerei a ordem do enunciado,
+  primeiro indicar a matriz depois o X
+  ======================================================
+    */
+  
+  printf("Indique os valores para uma matriz:\n");
+  for (i = 0; i < 5; i++) {
+    for (j = 0; j < 5; j++) {
+      scanf ("%d", &matriz [i] [j]);
+    }
+  }
+  printf ("Agora indique um valor X:\n");
+  scanf ("%d", &X);
+  for (k = 0; k < 5; k++) {
+    for (l = 0; l < 5; l++) {
+      if (matriz [k] [l] == X) {
+        printf ("Esse valor esta na linha %d e coluna %d\n", k, l);
+      }
+      else {
+        contador++;
+      }
+    }
+  }
+  if (contador == 25) {
+    printf ("Nao Encontrado\n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 5
+
+#include <stdio.h>
+#include <math.h>
+
+int main () {
+  int A [10] [10], i, j;
+  for (i = 0; i < 10; i++) {
+    for (j = 0; j < 10; j++) {
+      if (i < j) {
+        A[i][j] = 2*i + 7*j - 2;
+        printf("[%d", A [i] [j]);
+        printf("%-6s", " ]");
+      }
+      else if (i == j) {
+        A[i][j] = (3*(pow (i, 2))) - 1;
+        printf("[%d", A [i] [j]);
+        printf("%-6s", "]");
+      }
+      else if (i > j) {
+        A[i][j] = (4*(pow(i, 3))) - (5*(pow(j, 2))) + 1;
+        printf("[%d", A [i] [j]);
+        printf("%-6s", "]");
+      }
+    }
+    printf ("\n");
+  }
+  return 0;
+}
 
 //EXERCÍCIO 6
 
