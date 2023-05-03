@@ -317,9 +317,160 @@ int main () {
 
 //EXERCÍCIO 6
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main () {
+  srand(time(NULL));
+  int matriz[4][4], i, j, k, l;
+  printf ("Matriz original:\n");
+  for (i = 0; i < 4; i++) { 
+    for (j = 0; j < 4; j++) {
+      matriz [i] [j] = rand () % 20;
+      printf (" [ %d ] ", matriz [i] [j]);
+      
+    }
+    printf("\n");
+  }
+  printf("Matriz transformada:\n");
+  for (k = 0; k < 4; k++) {
+    for (l = 0; l < 4; l++) {
+      if ((k == 0 && (l == 1 || l == 2 || l == 3)) || (k == 1 && (l == 2 || l == 3)) || (k == 2 && l == 3)) {
+        printf (" [ 0 ] "); 
+      }
+      else {
+        matriz [k] [l] = rand () % 20;
+        printf (" [ %d ] ", matriz [k] [l]);
+      }
+  }
+    printf("\n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 7
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main () {
+  srand(time(NULL));
+  int matriz [5] [5], i, j, contador = 74;
+  matriz [0] [0] = rand () % 100;
+  if (matriz [0][0] > 50) {
+  for (i = 0; i < 5; i++) { 
+    for (j = 0; j < 5; j++) {
+      contador = contador + 1;
+      matriz [i] [j] = contador;
+      printf (" [ %d ] ", matriz [i] [j]);
+    }
+    printf("\n");
+  }
+  }
+  else {
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+           matriz [0][0] = matriz [0][0] + 1;
+           matriz [i][j] = matriz [0][0];
+           printf (" [ %d ] ", matriz [i] [j]);
+        }
+      printf("\n");
+    }
+  }
+  return 0;
+}
+
 //EXERCÍCIO 8
+
+#include <stdio.h>
+
+int main() {
+  int M1[2][2], M2[2][2], i, j, k, l, m, n, o, p, resultado, constante;
+  char opcao;
+  printf("==================================\n");
+  printf("ESCOLHA O COMANDO:\n");
+  printf("a) somar as duas matrizes\n");
+  printf("b) subtrair a primeira matriz da segunda\n");
+  printf("c) adicionar uma constante às duas matrizes\n");
+  printf("d) imprimir as matrizes\n");
+  printf("==================================\n");
+  scanf("%c", &opcao);
+
+  printf("Apresente os valores para uma matriz:\n");
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+      scanf("%d", &M1[i][j]);
+    }
+  }
+  printf("Apresente os valores para uma segunda matriz:\n");
+  for (k = 0; k < 2; k++) {
+    for (l = 0; l < 2; l++) {
+      scanf("%d", &M2[k][l]);
+    }
+  }
+  printf("\n==================================\n");
+  switch (opcao) {
+  case 'a':
+    for (m = 0; m < 2; m++) {
+      for (n = 0; n < 2; n++) {
+        resultado = (M1[m][n]) + (M2[m][n]);
+        printf(" [ %d ] ", resultado);
+      }
+      printf("\n");
+    }
+    break;
+  case 'b':
+    for (m = 0; m < 2; m++) {
+      for (n = 0; n < 2; n++) {
+        resultado = (M2[m][n]) - (M1[m][n]);
+        printf(" [ %d ] ", resultado);
+      }
+      printf("\n");
+    }
+    break;
+  case 'c':
+    printf("Determine uma constante:\n");
+    printf("==================================\n");
+    scanf("%d", &constante);
+    for (m = 0; m < 2; m++) {
+      for (n = 0; n < 2; n++) {
+        M1[m][n] = M1[m][n] + constante;
+        printf(" [ %d ] ", M1[m][n]);
+      }
+      printf("\n");
+    }
+    printf("\n");
+    for (o = 0; o < 2; o++) {
+      for (p = 0; p < 2; p++) {
+        M2[o][p] = M2[o][p] + constante;
+        printf(" [ %d ] ", M2[o][p]);
+      }
+      printf("\n");
+    }
+    break;
+  case 'd':
+    for (m = 0; m < 2; m++) {
+      for (n = 0; n < 2; n++) {
+        printf(" [ %d ] ", M1[m][n]);
+      }
+      printf("\n");
+    }
+    printf("\n");
+    for (o = 0; o < 2; o++) {
+      for (p = 0; p < 2; p++) {
+        printf(" [ %d ] ", M2[o][p]);
+      }
+      printf("\n");
+    }
+    break;
+  default:
+    printf("Nao eh uma opcao\n");
+    break;
+  }
+  return 0;
+}
 
 //STRINGS
 
