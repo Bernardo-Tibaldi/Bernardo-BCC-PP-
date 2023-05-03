@@ -476,9 +476,50 @@ int main() {
 
 //EXERCÍCIO 1
 
+#include <stdio.h>
+
+int main() {
+  char str [13] = "Hello World!";
+  printf("%s\n", str);
+  return 0;
+}
+
 //EXERCÍCIO 2
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  char str [10];
+  int i, contador = 0;
+  printf("Apresente uma sequência em binário:\n");
+  fgets (str, 10, stdin);
+  for (i = 0; i < 10; i++) {
+    if (str [i] == '1') {
+      contador++;
+    }
+  }
+  printf ("Ha %d numeros 1's nesta string\n", contador);
+  return 0;
+}
+
 //EXERCÍCIO 3
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  char str [11];
+  int i;
+  printf("Apresente uma string:\n");
+  fgets (str, 11, stdin);
+  for (i = 11; i > -1; i--){
+    printf("%c", str[i]);
+  }
+  return 0;
+}
 
 //EXERCÍCIO 4
 
