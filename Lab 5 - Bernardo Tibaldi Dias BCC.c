@@ -523,19 +523,168 @@ int main() {
 
 //EXERCÍCIO 4
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  setbuf (stdin, NULL);
+  char String[50], letra;
+  int i, contador = 0, j;
+  printf("Selecione uma letra:\n");
+  scanf("%c", &letra);
+  printf("Apresente uma string:\n");
+  scanf("%s", String);
+  for (i = 0; i < strlen(String); i++) {
+    if ((String[i] == 'a') || (String[i] == 'e') || (String[i] == 'i') || (String[i] == 'o') || (String[i] == 'u') || (String[i] == 'A') || (String[i] == 'E') || (String[i] == 'I') || (String[i] == 'O') || (String[i] == 'U')) {
+      contador++;
+  }
+}
+  printf("Ha %d vogais\n", contador);
+  for (j = 0; j < strlen(String); j++) {
+    if ((String[j] == 'a') || (String[j] == 'e') || (String[j] == 'i') || (String[j] == 'o') || (String[j] == 'u')) {
+      String[j] = letra;
+  }
+    else if ((String[j] == 'A') || (String[j] == 'E') || (String[j] == 'I') || (String[j] == 'O') || (String[j] == 'U')) {
+      String[j] = letra - 32;
+    }
+  }
+  printf("%s\n", String);
+  return 0;
+}
+
 //EXERCÍCIO 5
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  setbuf (stdin, NULL);
+  char String[100];
+  int i;
+  printf("Apresente uma palavra formada por letras maiusculas:\n");
+  scanf("%s", String);
+  for (i = 0; i < strlen(String); i++) {
+    String[i] = String[i] + 32;
+  }
+  printf("%s\n", String);
+  return 0;
+}
 
 //EXERCÍCIO 6
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  setbuf (stdin, NULL);
+  char String[100];
+  int i;
+  printf("Apresente uma palavra formada por letras minusculas:\n");
+  scanf("%s", String);
+  for (i = 0; i < strlen(String); i++) {
+    String[i] = String[i] - 32;
+  }
+  printf("%s\n", String);
+  return 0;
+}
+
 //EXERCÍCIO 7
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  setbuf (stdin, NULL);
+  char Vetor[100];
+  int i;
+  printf("Apresente uma frase:\n");
+  fgets (Vetor, 100, stdin);
+  for (i = 0; i < strlen(Vetor); i++) {
+    if (Vetor[i] != ' ') {
+      printf("%c", Vetor[i]);
+    }
+  }
+  printf("\n");
+  return 0;
+}
 
 //EXERCÍCIO 8
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  setbuf (stdin, NULL);
+  char String[100], L1, L2;
+  int i;
+  printf("Digite uma letra L1 e uma L2:\n");
+  scanf("%c %c", &L1, &L2);
+  printf("Apresente uma palavra:\n");
+  scanf ("%s", String);
+  for (i = 0; i < strlen(String); i++) {
+    if (String[i] == L1) {
+      String [i] = L2;
+    }
+  }
+  printf("%s\n", String);
+  return 0;
+}
+
 //EXERCÍCIO 9
+
 
 //EXERCÍCIO 10
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  setbuf (stdin, NULL);
+  char String[100];
+  float desconto, preco;
+  printf("Indique o nome de uma mercadoria:\n");
+  scanf ("%s", String);
+  printf("Indique o preco de %s\n", String);
+  scanf("%f", &preco);
+  desconto = 1.1*preco;
+  printf("O preco de %s a vista eh %.2f\n", String, desconto);
+  return 0;
+}
+
 //EXERCÍCIO 11
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main () {
+  setbuf(stdin, NULL);
+  int S[15];
+  int i, j, count;
+  printf("Indique uma string:\n");
+  for (count = 0; count < 15; count++) {
+    scanf ("%d", &S [count]);
+  }
+  printf ("Indique um valor i e um j:\n");
+  scanf ("%d", &i);
+  scanf ("%d", &j);
+  if (i < j) {
+    do {
+      printf("%d ", S[i]);
+      i++;
+    } while (i < j);
+  }
+  else {
+    printf("Valores Invalidos\n");
+  }
+  return 0;
+}
 
 //EXERCÍCIO 12
 
@@ -543,6 +692,184 @@ int main() {
 
 //EXERCÍCIO 14
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main () {
+  setbuf (stdin, NULL);
+  char str1 [101];
+  char str2 [101];
+  int N, i, j;
+  printf("Digite os valores de uma string str1: ");
+  fgets (str1, 100, stdin);
+  printf("Digite os valores de uma string str2: ");
+  fgets (str2, 100, stdin);
+  str1[strcspn(str1, "\n")] = '\0';
+  str2[strcspn(str2, "\n")] = '\0';
+  printf("Digite um valor N:\n");
+  scanf("%d", &N);
+  for(i = 0; str1[i] != '\0'; i++);
+   for (j = 0; (j < N + 2) && (str2[j] != '\0'); j++){
+    str1[i++] = str2[j];
+   }
+  str1[i] = '\0';
+  printf("%s", str1);
+  return 0;
+}
+
 //EXERCÍCIO 15
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main () {
+int i, contador = 0, comeco, tamanho;
+char S1 [100];
+char S2 [100];
+char opcao1, caractere, C1, C2;
+printf("=================================================\n");
+printf("MENU DE OPCOES:\n\n");
+printf("a) Ler uma string S1 (tamanho máximo 20 caracteres);\n");
+printf("b) Imprimir o tamanho da string S1;\n");
+printf("c) Comparar a string S1 com uma nova string S2 fornecida pelo usuario "
+       "e imprimir o resultado da comparacao;\n");
+printf("d) Concatenar a string S1 com uma nova string S2 e imprimir na tela o "
+       "resultado da concatenacao;\n");
+printf("e) Imprimir a string S1 de forma reversa;\n");
+printf("f) Contar quantas vezes um dado caractere aparece na string S1. Esse "
+       "caractere desse ser informado pelo usuario;\n");
+printf("g) Substituir a primeira ocorrencia do caractere C1 da string S1 pelo "
+       "caractere C2. Os caracteres C1 e C2 serao lidos pelo usuario;\n");
+printf("h) Verificar se uma string S2 eh substring de S1. A string S2 deve ser "
+       "informada pelo usuario;\n");
+printf("i) Retornar uma substring da string S1. Para isso o usuario deve "
+       "informar a partir de qual posicao deve ser criada a substring e qual eh "
+       "o tamanho da substring.\n");
+  printf("=================================================\n");
+  scanf ("%c", &opcao1);
+
+  if (opcao1 == 'a' || opcao1 == 'A') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+  }
+  else if (opcao1 == 'b' || opcao1 == 'B') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    printf("%d\n", strlen(S1));
+  }
+  else if (opcao1 == 'c' || opcao1 == 'C') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    printf("Indique os valores de uma segunda string:\n");
+    fgets (S2, 20, stdin);
+    if (strcmp (S1, S2) == 0) {
+      printf("Strings iguais\n");
+    }
+    else {
+      printf ("Strings Diferentes\n");
+    }
+  }
+  else if (opcao1 == 'd' || opcao1 == 'D') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    printf("Indique os valores de uma segunda string:\n");
+    fgets (S2, 20, stdin);
+    strcat(S1, S2);
+    printf("%s\n", S1);
+  }
+  else if (opcao1 == 'e' || opcao1 == 'E') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    for (i = strlen (S1); i >= 0; i--) {
+      printf ("%c ", S1[i]);
+    }
+  }
+  else if (opcao1 == 'f' || opcao1 == 'F') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    setbuf (stdin, NULL);
+    printf("Informe um caractere:\n");
+    scanf("%c", &caractere);
+    for (i = 0; i < strlen (S1); i++) {
+      if (S1[i] == caractere) {
+        contador++;
+      }
+      }
+      printf("Esse numero aparece %d vezes\n", contador);
+    }
+  else if (opcao1 == 'g' || opcao1 == 'G') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    printf("Informe um caractere C1, seguido por um C2:\n");
+    scanf("%c %c", &C1, &C2);
+    for (i = 0; i < strlen (S1); i++) {
+      if (S1[i] == C1) {
+        S1[i] = C2;
+      }
+    }
+    printf("%s\n", S1);
+  }
+  else if (opcao1 == 'h' || opcao1 == 'H') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma segunda string:\n");
+    fgets (S2, 20, stdin);
+    if (strstr(S1, S2) != NULL) {
+      printf("S2 eh uma substring de S1\n");
+   }
+   else {
+      printf("S2 nao eh uma substring de S1\n");
+   }
+    
+  }
+  else if (opcao1 == 'i' || opcao1 == 'I') {
+    setbuf (stdin, NULL);
+    printf("Indique os valores de uma string:\n");
+    fgets (S1, 20, stdin);
+    printf("Informar onde a substring ira comecar:\n");
+    scanf ("%d", &comeco);
+    printf("Indicar o tamanho da substring:\n");
+    scanf("%d", &tamanho);
+    for (i=comeco; i <= comeco + tamanho; i++) {
+      printf("%c ", S1[i]);
+    }
+    printf("\n");
+  }
+  else {
+    printf ("Erro!\n");
+  }
+  return 0;
+}
+
 //EXERCÍCIO 16
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main () {
+  char String [1001];
+  char Sequencia [5];
+  int i, j, maior = 0, I;
+  printf ("Digite um numero para que seja encontrada a sequencia dos 5 numeros consecutivos que gera o maior resultado:\n");
+  fgets (String, 1000, stdin);
+  for (i = 0; i < strlen (String); i++) {
+    if (((String [i])*(String [i+1])*(String [i+2])*(String [i+3])*(String [i+4])) > maior) {
+     maior = (String [i])*(String [i+1])*(String [i+2])*(String [i+3])*(String [i+4]);
+      I =i;
+    }
+  }
+  printf ("A sequencia cujo produto eh o maior possivel esta nas posicoes: %d, %d, %d, %d, %d\n", I, I+1, I+2, I+3, I+4);
+  
+  return 0;
+}
