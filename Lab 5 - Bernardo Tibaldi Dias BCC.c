@@ -637,6 +637,47 @@ int main() {
 
 //EXERCÍCIO 9
 
+#include <stdio.h>
+#include <string.h>
+
+int main  () {
+    char Carro [5] [100], CarroEconomico [100];
+    int i, j, consumo [5], economico = 0, litros;
+    printf("Indique 5 modelos de carros:\n");
+    for (i = 0; i < 5; i++) {
+        setbuf (stdin, NULL);
+        fgets (Carro[i], 100, stdin);
+    }
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < strlen (Carro[i]); j++) { 
+        if (Carro[i] [j] == '\n') {
+            Carro [i] [j]= ' ';
+            printf ("[ %s]\n", Carro[i]);
+        }
+        }
+        
+    }
+    printf("Indique quantos km cada carro percorre com 1 litro de combustivel:\n");
+    for (i = 0; i < 5; i++) {
+        printf("%s", Carro[i]);
+        scanf("%d", &consumo[i]);
+    }
+    for (i = 0; i < 5; i++) {
+        printf(" %s: %d ", Carro[i], consumo[i]);
+        printf("\n");
+        if (consumo [i] > economico) {
+            economico = consumo [i];
+            j = i;  
+        }
+    }
+    printf(" O %s eh o carro mais economico\n", Carro[j]);
+    for (i = 0; i < 5; i++) {
+        litros = 1000/consumo[i];
+        printf("O %s gasta %d litros para percorrer 1000 km\n", Carro[i], litros);
+    }
+    return 0;
+}
+
 
 //EXERCÍCIO 10
 
