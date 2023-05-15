@@ -204,8 +204,113 @@ int main () {
 
 //EXERCICIO 7
 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#define PI 3.1415
+
+struct polar  {
+  float raio;
+  float argumento;
+};
+
+struct cartesiano {
+  float x;
+  float y;
+};
+
+int main () {
+  struct polar p;
+  struct cartesiano c;
+  printf("Indique um raio e um argumento em radianos:\n");
+  scanf("%f", &p.raio);
+  scanf("%f", &p.argumento);
+  c.x = p.raio * cos(p.argumento);
+  c.y = p.raio * sin(p.argumento);
+  printf("%.2f, %.2f\n", c.x, c.y);
+  return 0;
+}
+
 //EXERCICIO 8
 
+#include <stdio.h>
+#include <string.h>
+
+struct funcionario {
+  char nome[100];
+  int idade;
+  char sexo;
+  char CPF[11];
+  int dia, mes, ano;
+  int setor;
+  char cargo[30];
+  float salario;
+};
+
+int main () {
+  struct funcionario f;
+  
+  printf("Indique o nome de um funcionario:\n");
+  setbuf(stdin, NULL);
+  fgets(f.nome, 100, stdin);
+  
+  printf("Indique a idade desse funcionario:\n");
+  scanf("%d", &f.idade);
+  printf("Indique o sexo desse funcionario:\n");
+  setbuf(stdin, NULL);
+  scanf("%c", &f.sexo);
+  
+  printf("Indique o CPF desse funcionario:\n");
+  scanf("%s", &f.CPF);
+  printf("Indique a data de nascimento desse funcionario:\n");
+  scanf("%d %d %d", &f.dia, &f.mes, &f.ano);
+  
+  printf("Indique o setor que esse funcionario trabalha:\n");
+  scanf("%d", &f.setor);
+  
+  printf("Indique o cargo desse funcionario:\n");
+  setbuf(stdin, NULL);
+  scanf("%s", &f.cargo);
+  
+  printf("Indique o salario desse funcionario:\n");
+  scanf("%f", &f.salario);
+  printf("\n\n===================================\n");
+  printf("DADOS DO FUNCIONARIO:\n");
+  printf("===================================\n");
+  switch (f.sexo) {
+    case 'M':
+       printf("Nome: %s\n", f.nome);
+       printf("Idade: %d\n", f.idade);
+       printf("Sexo: %c\n", f.sexo);
+       printf("CPF: %s\n", f.CPF);
+       printf("Data de Nascimento: %d/%d/%d\n", f.dia, f.mes, f.ano);
+       if (f.setor >= 0 && f.setor < 100) {
+       printf("Setor: %d\n", f.setor);
+       }
+       else {
+         printf("Setor: INVALIDO\n");
+       }
+       printf("Cargo: %s\n", f.cargo);
+       printf("Salario: %.2f", f.salario); break;
+    case 'F':
+       printf("Nome: %s\n", f.nome);
+       printf("Idade: %d\n", f.idade);
+       printf("Sexo: %c\n", f.sexo);
+       printf("CPF: %s\n", f.CPF);
+       printf("Data de Nascimento: %d/%d/%d\n", f.dia, f.mes, f.ano);
+       if (f.setor >= 0 && f.setor < 100) {
+       printf("Setor: %d\n", f.setor);
+       }
+       else {
+         printf("Setor: INVALIDO\n");
+       }
+       printf("Cargo: %s\n", f.cargo);
+       printf("Salario: %.2f", f.salario); break;
+    default:
+    printf("Erro!\n"); break;
+  }
+  return 0;
+}
 //EXERCICIO 9
 
 //EXERCICIO 10
