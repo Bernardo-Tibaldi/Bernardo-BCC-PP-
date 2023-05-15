@@ -313,7 +313,27 @@ int main () {
 }
 //EXERCICIO 9
 
+#include <stdio.h>
+
+struct vetor {
+float a;
+float b;
+float c;
+};
+
+int main () {
+  struct vetor v1, v2;
+  printf("Indique os valores a, b e c de um vetor:\n");
+  scanf ("%f %f %f", &v1.a, &v1.b, &v1.c);
+  printf("Indique os valores a, b e c de um segundo vetor:\n");
+  scanf("%f %f %f", &v2.a, &v2.b, &v2.c);
+  printf("O vetor resultante da soma desses outros dois eh: %.2f, %.2f, %.2f\n", v1.a + v2.a, v1.b + v2.b, v1.c + v2.c);
+  return 0;
+}
+
 //EXERCICIO 10
+
+
 
 //EXERCICIO 11
 
