@@ -516,16 +516,10 @@ int main () {
     return 0;
 }
 
-//EXERCICIO 13!!!!!!!!!!!!!
-
-/*. Peça ao usuário para digitar seus dados pessoais (Nome, Endereço, Data de Nascimento,
-Cidade, CEP, e-mail), verifique se as informações de Data de Nascimento, CEP e e-mail fazem
-sentido, e mostre ao usuário as informações, se estão todas corretas, ou mostre que alguma
-informação estava errada.*/
-
-
-
+//EXERCICIO 13
 #include <stdio.h>
+#include <string.h>
+
 struct nascimento {
     int dia;
     int mes;
@@ -546,37 +540,135 @@ struct aluno {
 };
 
 int main () {
+    int i, j = 0;
     struct aluno a;
     printf("Indique seu nome: ");
     setbuf(stdin, NULL);
-    scanf("%s", &a.nome);
+    fgets(a.nome, 50, stdin);
     printf("Indique seu endereco:\n");
     printf("Indique sua rua: ");
     setbuf(stdin, NULL);
-    scanf("%s", &a.e.rua);
+    fgets(a.e.rua, 50, stdin);
     printf("Indique o numero da sua casa: ");
     scanf("%d", &a.e.numero);
     printf("Indique seu bairro: ");
     setbuf(stdin, NULL);
-    scanf("%s", &a.e.bairro);
+    fgets(a.e.bairro, 50, stdin);
     printf("Indique sua data de nascimento: ");
     scanf("%d", &a.n.dia);
     scanf("%d", &a.n.mes);
     scanf("%d", &a.n.ano);
     printf("Indique sua cidade: ");
     setbuf(stdin, NULL);
-    scanf("%s", &a.cidade);
+    fgets(a.cidade, 50, stdin);
     printf("Indique seu CEP: ");
     scanf("%d", &a.cep);
     printf("Indique seu email: ");
     setbuf(stdin, NULL);
-    scanf("%s", &a.email);
+    fgets(a.email, 40, stdin);
+  printf("Nome: %s", a.nome);
+  printf("Endereco:\n Rua: %s\n Numero: %d\n Bairro:%s\n", a.e.rua, a.e.numero, a.e.bairro);
+  if (a.n.dia <= 31 && a.n.dia > 0 && a.n.mes > 0 && a.n.mes <= 12 && a.n.ano < 2023 && a.n.mes != 2) {
+    printf("Data de Nascimento: %d / %d / %d\n", a.n.dia, a.n.mes, a.n.ano);
+  }
+  else if (a.n.mes == 2 && a.n.dia < 29) {
+    printf("Data de Nascimento: %d / %d / %d\n", a.n.dia, a.n.mes, a.n.ano);
+  }
+  else {
+    printf("Erro na data de nascimento!\n");
+  }
+  printf("Cidade: %s\n", a.cidade);
+  if (a.cep < 100000000 && a.cep >= 10000000)
+  printf("CEP: %d \n", a.cep);
+  else {
+    printf("Erro no CEP!\n");
+  }
+  for (i = 0; i < strlen(a.email); i++) {
+    if (a.email[i] == '@') {
+      j++;
+    }
+    if (a.email[i] == '.' && a.email[i+1] == 'c' && a.email[i+2] == 'o' && a.email[i+3] == 'm') {
+      j++;
+    }
+  }
+  if (j == 2) {
+    printf ("Email: %s\n", a.email);
+  }
+  else {
+    printf ("Erro no email!\n");
+  }
     return 0;
 }
 
 //EXERCICIO 14
 
-//EXERCICIO 15
+#include <stdio.h>
+#include <string.h>
+
+struct carro {
+char nome[100];
+char marca[15];
+int ano;
+float preco;
+};
+
+int main () {
+  int i, j, p;
+  struct carro c[5];
+  for (i = 0; i < 5; i++) {
+    printf("Informe o carro: ");
+    setbuf(stdin, NULL);
+    fgets(c[i].nome, 100, stdin);
+    printf("Informe a marca desse carro: ");
+    setbuf (stdin, NULL);
+    fgets(c[i].marca, 15, stdin);
+    printf("Informe o ano desse carro: ");
+    scanf("%d", &c[i].ano);
+    printf("Informe o preco desse carro: ");
+    scanf("%f", &c[i].preco);
+  }
+  printf("Informe um valor P:\n");
+  scanf("%d", &p);
+  for (i = p; i >= 0; i=i-1000) {
+    printf("Carros abaixo de %d Reais:\n", i);
+    for (j = 0; j < 5; j++) {
+        if (c[j].preco < i) {
+           printf("%s", c[j].nome);
+           printf("%s", c[j].marca);
+           printf("%d", c[j].ano);
+        }
+      }
+    printf("\n\n");
+  }
+  return 0;
+}
+
+//EXERCICIO 15!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#include <stdio.h>
+#include <string.h>
+
+struct livro {
+char titulo[30];
+char autor[15];
+int ano;
+};
+
+int main () {
+  struct livro l[5];
+  int i, j;
+  for (i = 0; i < 5; i++) {
+    printf("Indique o nome do Livro: ");
+    setbuf(stdin, NULL);
+    fgets(l[i].titulo, 30, stdin);
+    printf("Indique o nome do autor: ");
+    setbuf(stdin, NULL);
+    fgets(l[i].autor, 15, stdin);
+    printf("Indique o ano de publicacao do livro: ");
+    scanf("%d", &l[i].ano);
+  }
+  return 0;
+}
 
 //EXERCICIO 16
 
