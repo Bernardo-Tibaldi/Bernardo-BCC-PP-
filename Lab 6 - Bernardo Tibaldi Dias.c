@@ -443,7 +443,7 @@ int main () {
         printf("Jogador %d:\n", i+1);
         for (k = 0; k < 3; k++) {
         j[i].valor = rand() % 52;
-        if (j[i].valor < 13) {
+        if (j[i].valor <= 13 && j[i].valor != 0) {
             if (j[i].valor == 11) {
                 printf("Valete de Ouros\n");
             }
@@ -460,7 +460,7 @@ int main () {
             printf("%d de Ouros\n", j[i].valor);
             }
         }
-        else if (j[i].valor > 13 && j[i].valor < 26) {
+        else if (j[i].valor > 13 && j[i].valor <= 26) {
             if (j[i].valor - 13 == 11) {
                 printf("Valete de Espadas\n");
             }
@@ -477,7 +477,7 @@ int main () {
             printf("%d de Espadas\n", j[i].valor - 13);
             }
         }
-        else if (j[i].valor > 26 && j[i].valor < 39) {
+        else if (j[i].valor > 26 && j[i].valor <= 39) {
             if (j[i].valor - 26 == 11) {
                 printf("Valete de Copas\n");
             }
