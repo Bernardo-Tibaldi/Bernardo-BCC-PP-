@@ -391,7 +391,7 @@ struct alunos {
 
 int main () {
   struct alunos a[10], aprovados[10], reprovados[10];
-  int i, j = 0, k = 0, l = 0, m = 0;
+  int i, j = 0, k = 0;
   for (i = 0; i < 10; i++) {
     printf("Digite o nome do aluno: ");
     setbuf(stdin, NULL);
