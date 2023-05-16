@@ -158,8 +158,25 @@ int main () {
     return 0;
 }
 
-//EXERCICIO 5!!!!!!!!!!!!!!!!!!!!!!!
+//EXERCICIO 5
 
+#include <stdio.h>
+
+struct vetor {
+float a;
+float b;
+float c;
+};
+
+int main () {
+  struct vetor v1, v2;
+  printf("Indique os valores a, b e c de um vetor:\n");
+  scanf ("%f %f %f", &v1.a, &v1.b, &v1.c);
+  printf("Indique os valores a, b e c de um segundo vetor:\n");
+  scanf("%f %f %f", &v2.a, &v2.b, &v2.c);
+  printf("O vetor resultante da soma desses outros dois eh: %.2f, %.2f, %.2f\n", v1.a + v2.a, v1.b + v2.b, v1.c + v2.c);
+  return 0;
+}
 
 
 //EXERCICIO 6
@@ -311,31 +328,100 @@ int main () {
   }
   return 0;
 }
-//EXERCICIO 9
-
-#include <stdio.h>
-
-struct vetor {
-float a;
-float b;
-float c;
-};
-
-int main () {
-  struct vetor v1, v2;
-  printf("Indique os valores a, b e c de um vetor:\n");
-  scanf ("%f %f %f", &v1.a, &v1.b, &v1.c);
-  printf("Indique os valores a, b e c de um segundo vetor:\n");
-  scanf("%f %f %f", &v2.a, &v2.b, &v2.c);
-  printf("O vetor resultante da soma desses outros dois eh: %.2f, %.2f, %.2f\n", v1.a + v2.a, v1.b + v2.b, v1.c + v2.c);
-  return 0;
-}
+//EXERCICIO 9!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 //EXERCICIO 10
 
+#include <stdio.h>
+#include <string.h>
 
+typedef struct Dados {
+char nome[100];
+char rua[50];
+int numero;
+char bairro[50];
+int telefone[11];
+}dados;
+
+int main () {
+  int i, j;
+  dados d[5], temporario;
+  for (i = 0; i < 5; i++) {
+    printf("Indique o nome da pessoa %d:\n", i+1);
+    setbuf(stdin, NULL);
+    scanf("%s", &d[i].nome);
+    printf("Indique o endereco da pessoa %d:\n", i+1);
+    printf("Indique a rua:\n");
+    setbuf(stdin, NULL);
+    scanf("%s", &d[i].rua);
+    printf("Indique o numero:\n");
+    scanf("%d", &d[i].numero);
+    printf("Indique o bairro:\n");
+    setbuf(stdin, NULL);
+    scanf("%s", &d[i].bairro);
+    printf("Indique o telefone da pessoa %d:\n", i+1);
+    setbuf(stdin, NULL);
+    scanf("%s", &d[i].telefone);
+  }
+  for (i = 0; i < 4; i++) {
+    for (j= i+1; j < 5; j++) {
+    if (strcmp(d[i].nome,d[j].nome) > 0 ) {
+      strcpy(temporario.nome, d[i].nome);
+      strcpy(d[i].nome, d[j].nome); 
+      strcpy(d[j].nome, temporario.nome);
+    }
+  }
+  }
+  for (i = 0; i < 5; i++) {
+  printf("Nome: %s\n Endereço\nRua: %s\nNumero: %d\nBairro: %s\nTelefone: %s\n", d[i].nome, d[i].rua, d[i].numero, d[i].bairro, d[i].telefone);
+  }
+  return 0;
+}
 
 //EXERCICIO 11
+
+#include <stdio.h>
+#include <string.h>
+
+struct alunos {
+ char nome[50];
+ int matricula;
+ float MediaFinal;
+};
+
+int main () {
+  struct alunos a[10], aprovados[10], reprovados[10];
+  int i, j = 0, k = 0, l = 0, m = 0;
+  for (i = 0; i < 10; i++) {
+    printf("Digite o nome do aluno: ");
+    setbuf(stdin, NULL);
+    fgets(a[i].nome, 50, stdin);
+    printf("Digite o numero de matricula do aluno: ");
+    scanf("%d", &a[i].matricula);
+    printf("Informe a Media Final do aluno: ");
+    scanf("%f", &a[i].MediaFinal);
+    
+    if (a[i].MediaFinal > 5) {
+      strcpy(aprovados[j].nome, a[i].nome);
+      j++;
+    }
+    else {
+      strcpy(reprovados[k].nome, a[i].nome);
+      k++;
+    }
+  }
+  printf("APROVADOS:\n");
+  for (i = 0; i < j; i++) {
+    printf("%s", aprovados[i].nome);
+    printf("\n");
+  }
+  printf("REPROVADOS:\n");
+  for (i = 0; i < k; i++) {
+    printf("%s", reprovados[i].nome);
+    printf("\n");
+  }
+  return 0;
+}
 
 //EXERCICIO 12
 
