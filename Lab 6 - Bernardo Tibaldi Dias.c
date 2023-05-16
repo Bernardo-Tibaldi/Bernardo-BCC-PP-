@@ -425,7 +425,100 @@ int main () {
 
 //EXERCICIO 12
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+struct jogador {
+    int valor;
+};
+
+int main () {
+    struct jogador j[2];
+    int i, k;
+    srand(time(NULL));
+
+    for (i = 0; i < 2; i++) {
+        printf("Jogador %d:\n", i+1);
+        for (k = 0; k < 3; k++) {
+        j[i].valor = rand() % 52;
+        if (j[i].valor < 13) {
+            if (j[i].valor == 11) {
+                printf("Valete de Ouros\n");
+            }
+            else if (j[i].valor == 12) {
+                printf("Rainha de Ouros\n");
+            }
+            else if (j[i].valor == 13) {
+                printf("Rei de Ouros\n");
+            }
+            else if (j[i].valor == 1) {
+                printf("As de Ouros\n");
+            }
+            else {
+            printf("%d de Ouros\n", j[i].valor);
+            }
+        }
+        else if (j[i].valor > 13 && j[i].valor < 26) {
+            if (j[i].valor - 13 == 11) {
+                printf("Valete de Espadas\n");
+            }
+            else if (j[i].valor - 13 == 12) {
+                printf("Rainha de Espadas\n");
+            }
+            else if (j[i].valor - 13 == 13) {
+                printf("Rei de Espadas\n");
+            }
+            else if (j[i].valor - 13 == 1) {
+                printf("As de Espadas\n");
+            }
+            else {
+            printf("%d de Espadas\n", j[i].valor - 13);
+            }
+        }
+        else if (j[i].valor > 26 && j[i].valor < 39) {
+            if (j[i].valor - 26 == 11) {
+                printf("Valete de Copas\n");
+            }
+            else if (j[i].valor - 26 == 12) {
+                printf("Rainha de Copas\n");
+            }
+            else if (j[i].valor - 26 == 13) {
+                printf("Rei de Copas\n");
+            }
+            else if (j[i].valor - 26 == 1) {
+                printf("As de Copas\n");
+            }
+            else {
+            printf("%d de Copas\n", j[i].valor - 26);
+            }
+        }
+        else if (j[i].valor > 39){
+            if (j[i].valor - 39 == 11) {
+                printf("Valete de Paus\n");
+            }
+            else if (j[i].valor - 39 == 12) {
+                printf("Rainha de Paus\n");
+            }
+            else if (j[i].valor - 39 == 13) {
+                printf("Rei de Paus\n");
+            }
+            else if (j[i].valor - 39 == 1) {
+                printf("As de Paus\n");
+            }
+            else {
+            printf("%d de Paus\n", j[i].valor - 39);
+            }
+        }
+        }
+    }
+    return 0;
+}
+
 //EXERCICIO 13
+
+
 
 //EXERCICIO 14
 
