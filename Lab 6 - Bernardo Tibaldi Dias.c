@@ -516,9 +516,63 @@ int main () {
     return 0;
 }
 
-//EXERCICIO 13
+//EXERCICIO 13!!!!!!!!!!!!!
+
+/*. Peça ao usuário para digitar seus dados pessoais (Nome, Endereço, Data de Nascimento,
+Cidade, CEP, e-mail), verifique se as informações de Data de Nascimento, CEP e e-mail fazem
+sentido, e mostre ao usuário as informações, se estão todas corretas, ou mostre que alguma
+informação estava errada.*/
 
 
+
+#include <stdio.h>
+struct nascimento {
+    int dia;
+    int mes;
+    int ano;
+};
+struct endereco {
+    char rua[50];
+    int numero;
+    char bairro[50];
+};
+struct aluno {
+    char nome[50];
+    struct endereco e;
+    struct nascimento n;
+    char cidade[50];
+    int cep;
+    char email [40];
+};
+
+int main () {
+    struct aluno a;
+    printf("Indique seu nome: ");
+    setbuf(stdin, NULL);
+    scanf("%s", &a.nome);
+    printf("Indique seu endereco:\n");
+    printf("Indique sua rua: ");
+    setbuf(stdin, NULL);
+    scanf("%s", &a.e.rua);
+    printf("Indique o numero da sua casa: ");
+    scanf("%d", &a.e.numero);
+    printf("Indique seu bairro: ");
+    setbuf(stdin, NULL);
+    scanf("%s", &a.e.bairro);
+    printf("Indique sua data de nascimento: ");
+    scanf("%d", &a.n.dia);
+    scanf("%d", &a.n.mes);
+    scanf("%d", &a.n.ano);
+    printf("Indique sua cidade: ");
+    setbuf(stdin, NULL);
+    scanf("%s", &a.cidade);
+    printf("Indique seu CEP: ");
+    scanf("%d", &a.cep);
+    printf("Indique seu email: ");
+    setbuf(stdin, NULL);
+    scanf("%s", &a.email);
+    return 0;
+}
 
 //EXERCICIO 14
 
