@@ -773,6 +773,44 @@ int main () {
 
 //EXERCICIO 18
 
-//EXERCICIO 19
+#include <stdio.h>
+#include <string.h>
+
+struct Voo {
+    int origem;
+    int chegada;
+};
+
+struct Aeroporto {
+    int QuantidadeSaida;
+    int QuantidadeChegada;
+};
+
+int main () {
+    struct Voo V[5];
+    struct Aeroporto A[5];
+    int i, j;
+    for (i = 0; i < 5; i++) {
+        A[i].QuantidadeSaida = 0;
+        A[i].QuantidadeChegada = 0;
+        printf("Apresente o local de saida do Voo %d e o local de chegada:\n", i+1);
+        scanf("%d", &V[i].origem);
+        scanf("%d", &V[i].chegada);
+        for (j = 0; j < 5; j++) {
+        if (V[i].origem == j) {
+            A[j].QuantidadeSaida++;
+        }
+        if (V[i].chegada == j) {
+            A[j].QuantidadeChegada++;
+        }
+        }
+    }
+    for (i = 0; i < 5; i++) {
+        printf("Aeroporto %d:\n", i);
+        printf("Quantidade de Voos de saida: %d\n", A[i].QuantidadeSaida);
+        printf("Quantidade de Voos de chegada: %d\n", A[i].QuantidadeChegada);
+    }
+    return 0;
+}
 
 //EXERCICIO 20
