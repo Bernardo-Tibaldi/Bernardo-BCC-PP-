@@ -814,3 +814,37 @@ int main () {
 }
 
 //EXERCICIO 20
+
+#include <stdio.h>
+#include <string.h>
+
+struct dma {
+ int dia;
+ int mes;
+ int ano;
+};
+
+int main () {
+  int i, resultado, j;
+struct dma dma[2];
+  printf("Indique uma data:\n");
+  for (i = 0; i < 2; i++) {
+    printf("Dia: ");
+    scanf("%d", &dma[i].dia);
+    printf("Mes: ");
+    scanf("%d", &dma[i].mes);
+    printf("Ano: ");
+    scanf("%d", &dma[i].ano);
+  }
+  
+  if (dma[1].ano == dma[0].ano + j) {
+    
+  }
+  for (i = 0; i < 12; i++) {
+  if (dma[1].mes == dma[0].mes + i) {
+    resultado = ((i * 30) + dma[1].dia) - dma[0].dia;
+    printf("%d", resultado);
+  }
+    }
+  return 0;
+}
