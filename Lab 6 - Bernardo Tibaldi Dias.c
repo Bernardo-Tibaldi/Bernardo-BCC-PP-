@@ -688,7 +688,7 @@ int main() {
 return 0;
 }
 
-//EXERCICIO 16!!!!!!!!!!!!!!!!!
+//EXERCICIO 16
 
 #include <stdio.h>
 #include <string.h>
@@ -706,13 +706,70 @@ struct data d;
 
 
 int main () {
-  struct dados[5];
+  struct dados D[5];
+  int i, M = 1, A;
+  for (i = 0; i < 5; i++) {
+  printf("Apresente o %do compromisso:\n", i+1);
+  setbuf (stdin, NULL);
+  fgets(D[i].compromisso, 60, stdin);
+  printf("Apresente a data desse compromisso:\n");
+  scanf("%d/%d/%d", &D[i].d.dia, &D[i].d.mes, &D[i].d.ano);
+  }
+  do {
+  printf("Apresente um mes:\n");
+  scanf("%d", &M);
+  printf("Apresente um ano:\n");
+  scanf("%d", &A);
+  for (i = 0; i < 5; i++) {
+  if (M == D[i].d.mes && A == D[i].d.ano) {
+    printf("Compromisso: %s", D[i].compromisso);
+    printf("Data: %d/%d/%d\n", D[i].d.dia, D[i].d.mes, D[i].d.ano);
+    printf("\n");
+  }
   
+  }
+  } while (M != 0);
   return 0;
 }
 
 
 //EXERCICIO 17
+
+#include <stdio.h>
+#include <string.h>
+
+struct eletrodomestico {
+char nome[15];
+int potencia;
+int horas;
+};
+
+int main () {
+    struct eletrodomestico e[5];
+    int tempo, i;
+    float ConsumoRelativo, ConsumoTotal = 0;
+    for (i = 0; i < 5; i++) {
+        printf("Indique o %do eletrodomestico: ", i + 1);
+        setbuf(stdin, NULL);
+        fgets(e[i].nome, 15, stdin);
+        printf("Indique a potencia dele: ");
+        scanf("%d", &e[i].potencia);
+        printf("Indique o tempo que esse eletrodomestico fica ativo por dia: ");
+        scanf("%d", &e[i].horas);
+    }
+    printf("Informe um tempo: ");
+    scanf("%d", &tempo);
+    for (i = 0; i < 5; i++) {
+        ConsumoTotal = ConsumoTotal + (e[i].potencia * e[i].horas * tempo);
+    }
+    printf("Consumo Total: %.2f\n", ConsumoTotal);
+    for (i = 0; i < 5; i++) {
+        ConsumoRelativo = ((e[i].potencia * e[i].horas * tempo)/ConsumoTotal) * 100;
+        printf("%s:\n", e[i].nome - 1);
+        printf("Consumo Relativo: %.2f por cento\n", ConsumoRelativo);
+    }
+    return 0;
+}
 
 //EXERCICIO 18
 
