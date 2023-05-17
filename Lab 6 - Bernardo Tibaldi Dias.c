@@ -643,20 +643,20 @@ int main () {
   return 0;
 }
 
-//EXERCICIO 15!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+//EXERCICIO 15
 #include <stdio.h>
 #include <string.h>
 
-struct livro {
-char titulo[30];
-char autor[15];
-int ano;
-};
+typedef struct livro {
+  char titulo[30];
+  char autor[15];
+  int ano;
+}Livro;
 
-int main () {
-  struct livro l[5];
-  int i, j;
+int main() {
+  Livro l[5];
+  int i, j, teste;
+  char procura[30];
   for (i = 0; i < 5; i++) {
     printf("Indique o nome do Livro: ");
     setbuf(stdin, NULL);
@@ -667,10 +667,50 @@ int main () {
     printf("Indique o ano de publicacao do livro: ");
     scanf("%d", &l[i].ano);
   }
+  printf("\n Qual livro voce esta procurando? ");
+  setbuf(stdin, NULL);
+  fgets(procura, 30, stdin);
+  for (j = 0; j < 5; j++) {
+    teste = 0;
+    for (i = 0; i < strlen(procura)-1; i++) {
+      if (procura[i] != l[j].titulo[i]) {
+        teste = 1;
+        break;
+      }
+    }
+    
+    if (teste == 0) {
+      printf("Titulo: %s", l[j].titulo);
+      printf("Autor: %s", l[j].autor);
+      printf("Ano: %d", l[j].ano);
+    } 
+  }
+return 0;
+}
+
+//EXERCICIO 16!!!!!!!!!!!!!!!!!
+
+#include <stdio.h>
+#include <string.h>
+
+struct data {
+int dia;
+int mes;
+int ano;
+};
+
+struct dados {
+char compromisso[60];
+struct data d;
+};
+
+
+int main () {
+  struct dados[5];
+  
   return 0;
 }
 
-//EXERCICIO 16
 
 //EXERCICIO 17
 
