@@ -328,7 +328,35 @@ int main () {
   }
   return 0;
 }
-//EXERCICIO 9!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//EXERCICIO 9
+
+#include <stdio.h>
+#include <math.h>
+
+struct complexos {
+float real;
+float imag;
+};
+
+int main () {
+  struct complexos z, w;
+  float modulo_Z, modulo_W;
+  printf("Indique as partes real e imaginaria de Z:\n Real: ");
+  scanf("%f", &z.real);
+  printf("Imaginaria: ");
+  scanf("%f", &z.imag);
+  printf("Indique as partes real e imaginaria de W:\n Real: ");
+  scanf("%f", &w.real);
+  printf("Imaginaria: ");
+  scanf("%f", &w.imag);
+  printf("A soma eh %.2f + %.2f i\n", z.real + w.real, z.imag + w.imag);
+  printf("A subtracao eh %.2f + %.2f i\n", z.real - w.real, z.imag - w.imag);
+  printf("O produto eh %.2f + %.2f i\n", z.real*w.real - z.imag*w.imag, z.real*w.imag + z.imag*w.real);
+  modulo_Z = sqrt(pow(z.real, 2) + pow(z.imag, 2));
+  modulo_W = sqrt(pow(w.real, 2) + pow(w.imag, 2));
+  printf("Modulo de Z: %.2f\n Modulo de W: %.2f", modulo_Z, modulo_W);
+  return 0;
+}
 
 //EXERCICIO 10
 
@@ -827,8 +855,8 @@ struct dma {
 int main () {
   int i, resultado, j;
 struct dma dma[2];
-  printf("Indique uma data:\n");
   for (i = 0; i < 2; i++) {
+    printf("Indique uma data:\n");
     printf("Dia: ");
     scanf("%d", &dma[i].dia);
     printf("Mes: ");
@@ -836,15 +864,17 @@ struct dma dma[2];
     printf("Ano: ");
     scanf("%d", &dma[i].ano);
   }
-  
-  if (dma[1].ano == dma[0].ano + j) {
-    
+if (dma[1].ano > dma[0].ano && dma[1].mes >= dma[0].mes) {
+    resultado = (dma[1].dia + 30 * (dma[1].mes) + 365 * (dma[1].ano)) - (dma[0].dia + 30 * (dma[0].mes) + 365 * (dma[0].ano));
+  printf("Se passaram %d dias entre essas datas\n", resultado);
+}
+  else if (dma[1].mes < dma[0].mes && dma[1].ano > dma[0].ano) {
+    resultado = (dma[1].dia + 30 * (dma[1].mes + 12) + 365 * (dma[1].ano - 1)) - (dma[0].dia + 30 * (dma[0].mes) + 365 * (dma[0].ano));
+    printf("Se passaram %d dias entre essas datas\n", resultado);
   }
-  for (i = 0; i < 12; i++) {
-  if (dma[1].mes == dma[0].mes + i) {
-    resultado = ((i * 30) + dma[1].dia) - dma[0].dia;
-    printf("%d", resultado);
+  else if (dma[1].dia > 30 || dma[0].dia > 30 || dma[1].mes > 12 || dma[0].mes || (dma[1].ano < dma[0].ano) || (dma[1].dia > 28 && dma[1].mes == 2) || (dma[0].dia > 28 && dma[0].mes == 2) ) {
+    printf ("Data Invalida!\n");
+    return 0;
   }
-    }
   return 0;
 }
