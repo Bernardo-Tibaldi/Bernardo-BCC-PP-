@@ -40,7 +40,23 @@ int main () {
 
 // EXERCICIO 4
 
+#include <stdio.h>
 
+int main () {
+    int a, b, *p1, *p2;
+    p1 = &a;
+    p2 = &b;
+    printf ("Apresente duas variaveis:\n");
+    scanf ("%d ", p1);
+    scanf("%d", p2);
+    if (&a > &b) {
+        printf("O conteudo do maior endereco eh: %d\n", *p1);
+    }
+    if (&a < &b) {
+        printf("O conteudo do maior endereco eh: %d\n",*p2);
+    }
+    return 0;
+}
 
 // EXERCICIO 5
 
