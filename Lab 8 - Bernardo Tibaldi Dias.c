@@ -16,7 +16,39 @@ int main () {
 
 //EXERCÍCIO 2
 
+#include <stdio.h>
+
+int main () {
+  int i, j, M[3][3];
+  void *p;
+  p = &M[0][0];
+  for (i = 0; i < 3; i++) {
+    for (j = 0; j < 3; j++) {
+      p = &M[i][j];
+      printf("%p\n", p);
+    }
+  }
+  
+  return 0;
+}
+
 //EXERCÍCIO 3
+
+#include <stdio.h>
+
+int main () {
+  int i, V[5], *p;
+  p = &V[0];
+  for (i = 0; i < 5; i++) {
+    printf("Indique o valor da posicao %d:\n", i+1);
+    scanf("%d", &V[i]);
+  }
+  printf("Resultado:\n");
+  for (i = 0; i < 5; i++) {
+    printf("%d\n", 2*(*p));
+  }
+  return 0;
+}
 
 //EXERCÍCIO 4
 
