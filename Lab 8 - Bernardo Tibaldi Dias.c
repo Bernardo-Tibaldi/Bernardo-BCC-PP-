@@ -45,12 +45,33 @@ int main () {
   }
   printf("Resultado:\n");
   for (i = 0; i < 5; i++) {
+    p = &V[i];
     printf("%d\n", 2*(*p));
   }
   return 0;
 }
 
 //EXERCÍCIO 4
+
+#include <stdio.h>
+
+int main () {
+  int i, V[5], *p;
+  p = &V[0];
+  printf("Apresente 5 valores:\n");
+  for (i = 0; i < 5; i++) {
+    printf("Valor %d:\n", i + 1);
+    scanf("%d", &V[i]);
+  }
+  printf("Os valores pares estao nos enderecos:\n");
+  for (i = 0; i < 5; i++) {
+    p = &V[i];
+    if ((*p)%2 == 0) {
+      printf("%p\n", p);
+    }
+  }
+  return 0;
+}
 
 //EXERCÍCIO 5
 
