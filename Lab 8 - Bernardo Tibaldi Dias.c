@@ -75,6 +75,34 @@ int main () {
 
 //EXERCÍCIO 5
 
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+  int i, j, contador = 0;
+  char S1[100], S2[100];
+  printf("Digite uma string:\n");
+  setbuf(stdin, NULL);
+  fgets(S1, 100, stdin);
+  printf("Digite uma segunda string:\n");
+  setbuf(stdin, NULL);
+  fgets(S2, 100, stdin);
+  for (i = 0; i < strlen(S1); i++) {
+    for (j = 0; j < strlen(S2); j++) {
+    if (S1[i] == S2[j]) {
+      contador++;
+    }
+    }
+  }
+  if (contador == strlen(S2)) {
+    printf("String 2 esta contida na String 1!\n");
+  }
+  else {
+    printf("String 2 nao esta contida na String 1!\n");
+  }
+  return 0; 
+}
+
 //EXERCÍCIO 6
 
 //EXERCÍCIO 7
