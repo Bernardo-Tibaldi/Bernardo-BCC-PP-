@@ -74,7 +74,6 @@ int main () {
 }
 
 //EXERCÍCIO 5
-
 #include <stdio.h>
 #include <string.h>
 
@@ -88,21 +87,23 @@ int main () {
   setbuf(stdin, NULL);
   fgets(S2, 100, stdin);
   for (i = 0; i < strlen(S1); i++) {
-    for (j = 0; j < strlen(S2); j++) {
-    if (S1[i] == S2[j]) {
+    for (j = 0, contador=0; j < strlen(S2) - 1; j++) {
+    if (S1[i+j] == S2[j]) {
       contador++;
+      }
     }
+    if (contador == strlen(S2) - 1) {  
+      break;   
     }
   }
-  if (contador == strlen(S2)) {
-    printf("String 2 esta contida na String 1!\n");
+  if(contador==strlen(S2) - 1){
+        printf("String 2 esta contida na String 1!\n");
   }
   else {
     printf("String 2 nao esta contida na String 1!\n");
   }
   return 0; 
 }
-
 //EXERCÍCIO 6
 
 //EXERCÍCIO 7
