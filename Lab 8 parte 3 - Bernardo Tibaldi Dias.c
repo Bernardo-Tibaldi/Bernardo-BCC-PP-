@@ -68,29 +68,20 @@ int main () {
 
 //EXERCICIO 4
 
-/*Faça um programa que leia três valores inteiros e chame uma função que
-receba estes 3 valores de entrada e retorne eles ordenados, ou seja, o
-menor valor na primeira variável, o segundo menor valor na variável do
-meio, e o maior valor na última variável. A função deve retornar o valor 1 se
-os três valores forem iguais e 0 se existirem valores diferentes. Exibir os
-valores ordenados na tela.
-*/
-
 #include <stdio.h>
 
 int Funcao (int *A, int *B, int *C) {
-  int comparacao, temporario1, temporario2;
+  int temporario1, temporario2;
   if (*A == *B && *B == *C && *A == *C) {
-    comparacao = 1;
+    return printf("1\n");
   }
   else {
-    comparacao = 0;
-    if (*A > *B && *B > *C) {
+    if (*A > *B && *B > *C && *A > *C) {
       *A = *A;
       *B = *B;
       *C = *C;
     }
-    else if (*A > *C && *C > *B) {
+    else if (*A > *C && *C > *B && *A > *B) {
       *A = *A;
       temporario1 = *C;
       *C = *B;
@@ -105,21 +96,52 @@ int Funcao (int *A, int *B, int *C) {
     else if (*C > *A && *A > *B) {
       temporario1 = *A;
       *A = *C;
+      temporario2 = *B;
+      *B = temporario1;
       *C = *B;
     }
+   else if (*B > *C && *C > *A) {
+     temporario1 = *A;
+     *A = *B;
+     *B = *C;
+     *C = temporario1;
+   }
+  else if (*C > *B && *B > *A) {
+    temporario1 = *A;
+    *A = *C;
+    *B = *B;
+    *C = temporario1;
+  }
+    return printf("0\n");
   }
 }
 
 int main () {
-  int A, B, C;
+  int A, B, C, comparacao;
   printf("Digite 3 valores:\n");
   scanf ("%d %d %d", &A, &B, &C);
   Funcao (&A, &B, &C);
-  printf("Ordem: %d, %d, %d\n", A, B, C);
+  printf("Ordem: %d, %d, %d\n", C, B, A);
   return 0;
 }
 
 //EXERCICIO 5
+
+#include <stdio.h>
+
+void funcao (float num, int *inteiro, float *frac) {
+  *inteiro = (int) num;
+  *frac = num - *inteiro ;
+}
+int main () {
+  float num, frac;
+  int inteiro;
+  printf("Apresente um numero real:\n");
+  scanf("%f", &num);
+  funcao (num, &inteiro, &frac);
+  printf("Parte inteira: %d\n Parte fracionaria: %.4f\n", inteiro, frac);
+  return 0;
+}
 
 //EXERCICIO 6
 
