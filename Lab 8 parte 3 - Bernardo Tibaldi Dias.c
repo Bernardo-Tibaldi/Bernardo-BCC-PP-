@@ -145,7 +145,50 @@ int main () {
 
 //EXERCICIO 6
 
-//EXERCICIO 7
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14
+
+void calc_esfera(float R, float *area, float *volume) {
+  *area = 4 * PI * (pow(R, 2));
+  *volume = (4/3) * PI* (pow(R, 3));
+}
+
+int main () {
+  float R, area, volume;
+  printf("Indique o valor de R para que seja calculada a area da superficie e o volume de uma esfera:\n");
+  scanf("%f", &R);
+  calc_esfera(R, &area, &volume);
+  printf("Area da esfera: %.2f\nVolume da esfera: %.2f\n", area, volume);
+  return 0;
+}
+
+//EXERCICIO 7!!!!!!!!!!!!!!
+
+#include <stdio.h>
+#include <string.h>
+void maior_elemento (char *V) {
+  int i, maior = V[0], contador = 0;
+  for (i = 0; i < strlen(V); i++) {
+    if ((int)V[i] > maior) {
+      maior = (int)V[i];
+    }
+    if (V[i] == maior) {
+      contador++;
+    }
+  }
+}
+
+int main () {
+  char V[100];
+  int maior = V[0], contador;
+  printf("Indique valores para um array:\n");
+  setbuf(stdin, NULL);
+  fgets(V, 100, stdin);
+  printf("O maior numero eh %d, que aparece %d vezes", maior, contador);
+  maior_elemento (V);
+}
+
 
 //EXERCICIO 8
 
