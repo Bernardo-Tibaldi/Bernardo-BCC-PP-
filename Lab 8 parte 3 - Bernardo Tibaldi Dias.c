@@ -203,6 +203,35 @@ int main () {
 
 //EXERCICIO 8
 
+#include <stdio.h>
+#include <stdlib.h>
+
+int negativos(float *vet, int N, int *contador) {
+  *contador = 0;
+  int i;
+  for (i = 0; i < N; i++) {
+    if (vet[i] < 0) {
+      (*contador)++;
+    }
+  }
+  return *contador;
+}
+
+int main () {
+  int N, i, contador;
+  float *vet;
+  printf("Indique um valor n para o tamanho de um array: ");
+  scanf("%d", &N);
+  vet = (float *) malloc(N*(sizeof(int))); 
+  for (i = 0; i < N; i++) {
+    printf("Posicao %d: ", i + 1);
+    scanf("%f", &vet[i]);
+  }
+  negativos(vet, N, &contador);
+  printf("Ha %d numeros negativos nesse array\n", contador);
+  return 0;
+}
+
 //EXERCICIO 9
 
 //EXERCICIO 10
