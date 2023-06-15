@@ -163,32 +163,43 @@ int main () {
   return 0;
 }
 
-//EXERCICIO 7!!!!!!!!!!!!!!
+//EXERCICIO 7
 
 #include <stdio.h>
-#include <string.h>
-void maior_elemento (char *V) {
-  int i, maior = V[0], contador = 0;
-  for (i = 0; i < strlen(V); i++) {
-    if ((int)V[i] > maior) {
-      maior = (int)V[i];
-    }
-    if (V[i] == maior) {
-      contador++;
+#include <stdlib.h>
+
+
+void funcao (int *p, int n, int *contador, int *maior) {
+  int i, j;
+  *contador = 0;
+  *maior = p[0];
+  for (i = 0; i < n; i++) {
+        if (p[i] > *maior) {
+      *maior = p[i];
+      }
+  }
+  for (i = 0; i < n; i++) {
+    if (*maior == p[i]) {
+      (*contador)++;
     }
   }
 }
 
 int main () {
-  char V[100];
-  int maior = V[0], contador;
+  int n, *p, i, maior, contador;
+  printf("Digite o numero de elementos do array:\n");
+  scanf("%d", &n);
+    p = (int *) malloc(n*(sizeof(int)));
   printf("Indique valores para um array:\n");
-  setbuf(stdin, NULL);
-  fgets(V, 100, stdin);
-  printf("O maior numero eh %d, que aparece %d vezes", maior, contador);
-  maior_elemento (V);
+  for (i = 0; i < n; i++) {
+    printf("Valor %d: ", i+1);
+    scanf("%d", &p[i]);
+  }
+  funcao(p, n, &contador, &maior);
+  printf("Maior: %d\n", maior);
+  printf("Aparece %d vezes\n", contador);
+  return 0;
 }
-
 
 //EXERCICIO 8
 
