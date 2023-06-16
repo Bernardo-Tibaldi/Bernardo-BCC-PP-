@@ -234,7 +234,66 @@ int main () {
 
 //EXERCICIO 9
 
-//EXERCICIO 10
+#include <stdio.h>
+#include <stdlib.h>
+
+int main () {
+  int i, n, *Array, *p;
+  printf("Indique um valor para o tamanho do array: ");
+  scanf("%d", &n);
+  Array = (int *) malloc(n*(sizeof(int)));
+  p = Array;
+  for (i = 0; i < n; i++) {
+    printf("Valor %d: ", i + 1);
+    scanf("%d", &Array[i]);
+  }
+  for (i = 0; i < n; i++) {
+    (*(p+i))++;
+    printf("%d\n", *(p+i));
+  }
+  return 0;
+}
+
+//EXERCICIO 10!!!!!!!
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int funcao (int n, int m) {
+  if (m == n) {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
+int main () {
+  int i, n, m, *A1, *A2, *A3;
+  printf("Indique o tamanho de um Array 1: ");
+  scanf("%d", &n);
+  A1 = (int *) malloc(n*(sizeof(int)));
+  printf("Indique o tamanho de um Array 2: ");
+  scanf("%d", &m);
+  A2 = (int *) malloc(m*(sizeof(int)));
+  for (i = 0; i < n; i++) {
+    printf("Indique o valor %d do Array 1:", i + 1);
+    scanf("%d", &A1[i]);
+  }
+
+  for (i = 0; i < m; i++) {
+    printf("Indique o valor %d do Array 2:", i + 1);
+    scanf("%d", &A2[i]);
+  }
+  funcao(n, m);
+  *A3 = (*A1)+(*A2);
+  printf("O Array 3 eh:\n");
+  for (i = 0; i < m; i++) {
+    *(A3+i) = (*(A2+i)) + (*(A1+i));
+    printf("%d ", *(A3+i));
+  }
+  return 0;
+}
 
 //EXERCICIO 11
 
